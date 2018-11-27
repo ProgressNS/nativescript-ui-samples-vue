@@ -27,7 +27,14 @@ Each of the above-mentioned folder has a standard NativeScript application struc
 ## Running **Progress NativeScript UI** sample app
 Make sure you are using the latest NativeScript CLI version by running `npm i nativescript -g`.
 
-Steps to run the sample:
+Steps to run the Gauge sample:
 
-1. `cd listview`
+1. `cd gauge`
 2. `tns run android` or `tns run ios`
+
+Steps to run the rest samples:
+
+1. `cd dataform`
+2. `npm i`
+3. `./node_modules/.bin/tsc`
+2. `tns run android --bundle` or `tns run ios --bundle`
