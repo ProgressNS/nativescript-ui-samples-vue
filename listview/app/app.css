@@ -1,0 +1,45 @@
+.big {
+  font-size: 20
+}
+
+.item {
+  padding: 5 0;
+  background-color: white;
+}
+
+.header {
+  background-color: #a2ebfd
+}
+
+.footer {
+  background-color: #eeeeee;
+}
+
+.swipe-item {
+  color: white;
+  padding: 16;
+}
+
+.swipe-item.left {
+  background-color: #240774;
+}
+
+.swipe-item.right {
+  background-color: #79000a;
+}
+
+.red {
+  background-color: #ff9999;
+}
+
+.green {
+  background-color: #99ff99;
+}
+
+.blue {
+  background-color: #6666ff;
+}
+
+.selected {
+  background-color: #444444;
+}

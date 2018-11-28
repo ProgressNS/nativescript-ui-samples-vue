@@ -1,0 +1,32 @@
+{
+  "description": "NativeScript UI ListView Vue Demo App",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "readme": "README.md",
+  "repository": "http://www.github.com/NativeScript/nativescript-ui-listview.git",
+  "nativescript": {
+    "id": "org.nativescript.demovueradlistview",
+    "tns-android": {
+      "version": "5.0.0"
+    },
+    "tns-ios": {
+      "version": "5.0.0"
+    }
+  },
+  "dependencies": {
+    "nativescript-ui-listview": "*",
+    "nativescript-vue": "^2.0.0-alpha.2",
+    "tns-core-modules": "^5.0.0",
+    "tslib": "^1.9.3",
+    "vue": "^2.5.17",
+    "nativescript-ui-core": "*"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "lazy": "1.0.11",
+    "nativescript-dev-typescript": "~0.7.0",
+    "nativescript-dev-webpack": "~0.18.0",
+    "shelljs": "^0.8.2"
+  }
+}
