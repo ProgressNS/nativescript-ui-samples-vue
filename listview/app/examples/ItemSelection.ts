@@ -17,11 +17,16 @@ export default {
       <RadListView ref="listView"
                    for="item in itemList"
                    selectionBehavior="Press"
-                   :multipleSelection="true"
                    @itemSelected="onItemSelected"
                    @itemDeselected="onItemDeselected">
         <v-template>
-          <StackLayout class="item" :class="item.class" orientation="vertical">
+          <StackLayout class="item" orientation="vertical">
+            <Label class="big" :text="item.name"></Label>
+            <Label :text="item.description"></Label>
+          </StackLayout>
+        </v-template>
+        <v-template if="$selected">
+          <StackLayout class="item selected" orientation="vertical">
             <Label class="big" :text="item.name"></Label>
             <Label :text="item.description"></Label>
           </StackLayout>
@@ -45,13 +50,10 @@ export default {
     onItemSelected({ index, object }) {
       const itemSelected = this.itemList.getItem(index);
       console.log(`Item selected: ${itemSelected.name}`);
-      itemSelected.class = 'selected';
-      this.itemList.setItem(index, itemSelected);
     },
     onItemDeselected({ index, object }) {
       let itemSelected = this.itemList.getItem(index);
       console.log(`Item deselected ${itemSelected.name}`);
-      itemSelected.class = '';
     },
     onNavigationButtonTap() {
       frameModule.topmost().goBack();
