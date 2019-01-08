@@ -17,17 +17,20 @@ export default {
                        :itemTemplateSelector="templateSelector">
             <v-template name="red">
               <StackLayout class="item red" orientation="vertical">
-                <Label class="big" :text="item.name"></Label>
+                <Label class="big" :text="item.name + ' selector'"></Label>
+                <Label class="big" :text="item.type"></Label>
               </StackLayout>
             </v-template>
             <v-template name="green">
               <StackLayout class="item green" orientation="vertical">
-                <Label class="big" :text="item.name"></Label>
+                <Label class="big" :text="item.name + ' selector'"></Label>
+                <Label class="big" :text="item.type"></Label>
               </StackLayout>
             </v-template>
             <v-template name="blue">
               <StackLayout class="item blue" orientation="vertical">
-                <Label class="big" :text="item.name"></Label>
+                <Label class="big" :text="item.name + ' selector'"></Label>
+                <Label class="big" :text="item.type"></Label>
               </StackLayout>
             </v-template>
           </RadListView>
@@ -38,17 +41,20 @@ export default {
           <RadListView for="item in itemList">
             <v-template name="red" if="item.type === 'red'">
               <StackLayout class="item red" orientation="vertical">
-                <Label class="big" :text="item.name"></Label>
+                <Label class="big" :text="item.name + ' if template'"></Label>
+                <Label class="big" :text="item.type"></Label>
               </StackLayout>
             </v-template>
             <v-template name="green" if="item.type === 'green'">
               <StackLayout class="item green" orientation="vertical">
-                <Label class="big" :text="item.name"></Label>
+                <Label class="big" :text="item.name + ' if template'"></Label>
+                <Label class="big" :text="item.type"></Label>
               </StackLayout>
             </v-template>
             <v-template name="blue" if="item.type === 'blue'">
               <StackLayout class="item blue" orientation="vertical">
-                <Label class="big" :text="item.name"></Label>
+                <Label class="big" :text="item.name + ' if template'"></Label>
+                <Label class="big" :text="item.type"></Label>
               </StackLayout>
             </v-template>
           </RadListView>
@@ -57,16 +63,16 @@ export default {
     </TabView>
   </Page>
   `,
-  data () {
+  data() {
     return {
       title: description,
       itemList: [
-        {name: 'Item 1', type: 'red'},
-        {name: 'Item 2', type: 'green'},
-        {name: 'Item 3', type: 'blue'},
-        {name: 'Item 4', type: 'red'},
-        {name: 'Item 5', type: 'green'},
-        {name: 'Item 6', type: 'blue'},
+        { name: 'Item 1', type: 'red' },
+        { name: 'Item 2', type: 'green' },
+        { name: 'Item 3', type: 'blue' },
+        { name: 'Item 4', type: 'red' },
+        { name: 'Item 5', type: 'green' },
+        { name: 'Item 6', type: 'blue' },
       ],
     };
   },
@@ -75,7 +81,7 @@ export default {
     onNavigationButtonTap() {
       frameModule.topmost().goBack();
     },
-    templateSelector (item, index, items) {
+    templateSelector(item, index, items) {
       return {
         red: 'red',
         green: 'green',

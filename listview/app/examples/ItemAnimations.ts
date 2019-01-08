@@ -28,13 +28,13 @@ export default {
               <Button text="RESET" @tap="onResetClick" ios:class="iosButton"></Button>
           </StackLayout>
       </StackLayout>
-      <RadListView  ref="listView" for="(item, index) in itemList" :itemInsertAnimation="itemInsertAnimation" :itemDeleteAnimation="itemDeleteAnimation" row="1">
+      <RadListView  ref="listView" for="item in itemList" :itemInsertAnimation="itemInsertAnimation" :itemDeleteAnimation="itemDeleteAnimation" row="1">
       <v-template>
-      <StackLayout class="item" orientation="vertical" @longPress="onItemLongPress({index,item})" @tap="onItemTap({index,item})">
-        <Label class="big" :text="item.name"></Label>
-        <Label :text="item.description"></Label>
-      </StackLayout>
-    </v-template>
+        <StackLayout class="item" orientation="vertical" @longPress="onItemLongPress({index,item})" @tap="onItemTap({index,item})">
+          <Label class="big" :text="item.name"></Label>
+          <Label :text="item.description"></Label>
+        </StackLayout>
+      </v-template>
       </RadListView>
     </GridLayout>
   </Page>
@@ -82,10 +82,12 @@ export default {
     },
 
     onUpdateItemClick() {
+      console.log(this.itemList.length);
       for (let index = 0; index < this.itemList.length; index++) {
-        this.itemList.getItem(index).name = "This is an updated item";
-        this.itemList.getItem(index).description =
-          "This is the updated item's description.";
+        let item = this.itemList.getItem(index);
+        item.name = "This is an updated item";
+        item.description = "This is the updated item's description.";
+        this.itemList.setItem(index, item);
       }
     },
 

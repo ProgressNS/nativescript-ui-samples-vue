@@ -1,4 +1,4 @@
-import { simpleItemList } from '../data';
+import { getItemList } from '../data';
 import * as frameModule from "tns-core-modules/ui/frame";
 
 const description = 'Getting Started';
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       title: description,
-      itemList: simpleItemList,
+      itemList: getItemList(10),
     };
   },
   methods: {

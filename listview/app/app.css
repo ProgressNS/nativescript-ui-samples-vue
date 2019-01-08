@@ -43,3 +43,7 @@
 .selected {
   background-color: #444444;
 }
+
+.iosButton {
+    margin: 10
+}

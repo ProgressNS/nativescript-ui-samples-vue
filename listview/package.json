@@ -6,27 +6,35 @@
   "nativescript": {
     "id": "org.nativescript.demovueradlistview",
     "tns-android": {
-      "version": "5.0.0"
+      "version": "5.1.0"
     },
     "tns-ios": {
-      "version": "5.0.0"
+      "version": "5.1.0"
     }
   },
   "dependencies": {
     "nativescript-ui-listview": "*",
-    "nativescript-vue": "^2.0.0-alpha.2",
-    "tns-core-modules": "^5.0.0",
+    "nativescript-vue": "^2.0.2",
+    "tns-core-modules": "^5.1.0",
     "tslib": "^1.9.3",
     "vue": "^2.5.17",
     "nativescript-ui-core": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@types/chai": "^4.0.2",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.5",
+    "babel-loader": "^8.0.4",
     "babel-traverse": "6.26.0",
     "babel-types": "6.26.0",
     "babylon": "6.18.0",
     "lazy": "1.0.11",
+    "nativescript-dev-appium": "4.0.9",
     "nativescript-dev-typescript": "~0.7.0",
-    "nativescript-dev-webpack": "~0.18.0",
-    "shelljs": "^0.8.2"
+    "nativescript-dev-webpack": "~0.18.1",
+    "nativescript-vue-template-compiler": "^2.0.2",
+    "shelljs": "^0.8.2",
+    "vue-loader": "^15.4.2"
   }
 }
