@@ -6,17 +6,17 @@
   "nativescript": {
     "id": "org.nativescript.demovuechart",
     "tns-android": {
-      "version": "5.0.0"
+      "version": "5.1.0"
     },
     "tns-ios": {
-      "version": "5.0.0"
+      "version": "5.1.0"
     }
   },
   "dependencies": {
     "nativescript-theme-core": "~1.0.4",
     "nativescript-ui-chart": "*",
     "nativescript-vue": "^2.0.2",
-    "tns-core-modules": "^5.0.0",
+    "tns-core-modules": "^5.1.0",
     "tslib": "^1.9.3",
     "vue": "^2.5.17",
     "nativescript-ui-core": "*"
@@ -33,7 +33,6 @@
     "nativescript-dev-webpack": "~0.18.0",
     "nativescript-vue-template-compiler": "~2.0.2",
     "shelljs": "^0.8.2",
-    "typescript": "^3.1.6",
     "vue-loader": "~15.4.2"
   }
 }
