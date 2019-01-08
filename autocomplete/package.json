@@ -6,17 +6,17 @@
   "nativescript": {
     "id": "org.nativescript.demovueautocomplete",
     "tns-android": {
-      "version": "5.0.0"
+      "version": "5.1.0"
     },
     "tns-ios": {
-      "version": "5.0.0"
+      "version": "5.1.0"
     }
   },
   "dependencies": {
     "nativescript-theme-core": "~1.0.4",
     "nativescript-ui-autocomplete": "*",
     "nativescript-vue": "^2.0.0",
-    "tns-core-modules": "^5.0.0",
+    "tns-core-modules": "^5.1.0",
     "tslib": "^1.9.3",
     "vue": "^2.5.17",
     "nativescript-ui-core": "*"
