@@ -3,23 +3,19 @@ import { getExamples } from '../examples';
 export default {
   name: 'Home',
   template: `
-    <Page>
-    <StackLayout class="page">
-      <RadListView ref="listView"
-                   for="example in examples"
-                   @itemTap="goToExample">
-        <v-template name="header">
-          <Label class="big" text="Calendar examples"></Label>
-        </v-template>
-
-        <v-template>
-          <StackLayout class="item" orientation="vertical" style="margin-top: 20">
-            <Label :text="example.description">
-            </Label>
-          </StackLayout>
-        </v-template>
-      </RadListView>
-    </StackLayout>
+  <Page>
+      <ActionBar title="Calendar Vue">
+      </ActionBar>
+        <ListView ref="listView"
+                  for="example in examples"
+                  @itemTap="goToExample">
+          <v-template>
+            <StackLayout class="item" orientation="vertical">
+              <Label class="titleLabel" :text="example.description">
+              </Label>
+            </StackLayout>
+          </v-template>
+        </ListView>
   </Page>
   `,
   data () {

@@ -9,22 +9,25 @@ export default {
   template: `
   <Page>
     <ActionBar :title="title">
-      <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
-      <ActionItem text="None" android.position="popup" @tap="onNoneTap"></ActionItem>
-      <ActionItem text="Single" android.position="popup" @tap="onSingleTap"></ActionItem>
-      <ActionItem text="Multiple" android.position="popup" @tap="onMultipleTap"></ActionItem>
-      <ActionItem text="Range" android.position="popup" @tap="onRangeTap"></ActionItem>
+      <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>=
     </ActionBar>
-    <StackLayout>
+    <GridLayout orientation="vertical" rows="*, auto">
       <RadCalendar
         :selectionMode="selectionMode">
       </RadCalendar>
+      <StackLayout orientation="vertical" row="1">
+        <Button text="None" @tap="onNoneTap"></Button>
+        <Button text="Single" @tap="onSingleTap"></Button>
+        <Button text="Multiple" @tap="onMultipleTap"></Button>
+        <Button text="Range" @tap="onRangeTap"></Button>
+      </StackLayout>
     </StackLayout>
   </Page>
   `,
   data () {
     return {
       selectionMode: CalendarSelectionMode.None,
+      title: description
     };
   },
   methods: {

@@ -13,7 +13,7 @@ import {
   MonthCellStyle,
 } from 'nativescript-ui-calendar';
 
-const description = 'Cell Styling';
+const description = 'Cell styling';
 
 export default {
   name: 'CellStyling',
@@ -422,4 +422,9 @@ export default {
       frameModule.topmost().goBack();
     },
   },
+  data () {
+    return {
+      title: "Styling"
+    };
+  }
 };

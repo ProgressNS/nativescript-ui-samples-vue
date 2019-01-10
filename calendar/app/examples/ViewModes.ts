@@ -11,24 +11,27 @@ export default {
   <Page>
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
-      <ActionItem text="Week" android.position="popup" @tap="onWeekTap"></ActionItem>
-      <ActionItem text="Month" android.position="popup" @tap="onMonthTap"></ActionItem>
-      <ActionItem text="Month Names" android.position="popup" @tap="onMonthNamesTap"></ActionItem>
-      <ActionItem text="Year" android.position="popup" @tap="onYearTap"></ActionItem>
-      <ActionItem text="Day" android.position="popup" @tap="onDayTap"></ActionItem>
     </ActionBar>
-    <StackLayout>
-      <RadCalendar
+    <GridLayout orientation="vertical" rows="*, auto">
+    <RadCalendar
         :eventSource="events"
         :viewMode="viewMode">
       </RadCalendar>
-    </StackLayout>
+      <StackLayout row="1" orientation="horizontal">
+        <Button text="Week" @tap="onWeekTap"></Button>
+        <Button text="Month"  @tap="onMonthTap"></Button>
+        <Button text="Month names"  @tap="onMonthNamesTap"></Button>
+        <Button text="Year"  @tap="onYearTap"></Button>
+        <Button text="Day"  @tap="onDayTap"></Button>
+      <StackLayout>
+    </GridLayout>
   </Page>
   `,
   data () {
     return {
       events: getEvents(10),
       viewMode: CalendarViewMode.Month,
+      title: description
     };
   },
   methods: {
