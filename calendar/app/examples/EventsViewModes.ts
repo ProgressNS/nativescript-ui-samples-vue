@@ -11,22 +11,25 @@ export default {
   <Page>
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
-      <ActionItem text="None" android.position="popup" @tap="onNoneTap"></ActionItem>
-      <ActionItem text="Inline" android.position="popup" @tap="onInlineTap"></ActionItem>
-      <ActionItem text="Popover" android.position="popup" @tap="onPopoverTap"></ActionItem>
     </ActionBar>
-    <StackLayout>
+    <GridLayout orientation="vertical" rows="*, auto">
       <RadCalendar
         :eventSource="events"
         :eventsViewMode="eventsViewMode">
       </RadCalendar>
-    </StackLayout>
+      <StackLayout row="1" orientation="horizontal">
+        <Button text="None"  @tap="onNoneTap"></Button>
+        <Button text="Inline"  @tap="onInlineTap"></Button>
+        <Button text="Popover" @tap="onPopoverTap"></Button>
+      </StackLayout>
+    </GridLayout>
   </Page>
   `,
   data () {
     return {
       events: getEvents(10),
       eventsViewMode: CalendarEventsViewMode.None,
+      title: description
     };
   },
   methods: {

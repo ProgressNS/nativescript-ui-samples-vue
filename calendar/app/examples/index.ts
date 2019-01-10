@@ -12,14 +12,14 @@ import ViewModes from './ViewModes';
 export const getExamples = () => {
   return [
     GettingStarted,
+    Localization,
     PopulatingWithData,
+    ProgrammaticControl,
     ViewModes,
-    EventsViewModes,
     SelectionModes,
     TransitionModes,
-    DayView,
     CellStyling,
-    ProgrammaticControl,
-    Localization,
+    EventsViewModes,
+    DayView
   ];
 };

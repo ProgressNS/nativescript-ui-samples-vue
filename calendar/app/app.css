@@ -5,15 +5,17 @@
 }
 
 .big {
-  font-size: 20
+  font-size: 20;
+  margin-bottom: 10;
 }
 
 .item {
-  padding: 2 0;
+  padding: 15;
   background-color: white;
+  font-size: 16;
+  color:#404040;
 }
 
-.titleLabel {
-    margin: 16;
-    vertical-align: center;
+Button{
+  padding: 5;
 }

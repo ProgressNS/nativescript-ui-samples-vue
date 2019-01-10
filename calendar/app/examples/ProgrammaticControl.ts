@@ -1,6 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 
-const description = 'Programmatic Control';
+const description = 'Programmatic control';
 
 export default {
   name: 'ProgrammaticControl',
@@ -35,5 +35,10 @@ export default {
       const date = new Date();
       this.$refs.calendar.goToDate(date);
     },
+  },
+  data () {
+    return {
+      title: description
+    };
   }
 };

@@ -13,10 +13,10 @@ export default {
     <GridLayout
       orientation="vertical" rows="*, auto">
       <RadCalendar ref="calendar" :locale="locale"></RadCalendar>
-      <StackLayout orientation="horizontal" row="1">
-        <Button text="en-EN" @tap="changeLocale('en-EN')"></Button>
-        <Button text="es-ES" @tap="changeLocale('es-ES')"></Button>
-        <Button text="ru-RU" @tap="changeLocale('ru-RU')"></Button>
+      <StackLayout orientation="vertical" row="1">
+        <Button text="de-DE" @tap="changeLocale('de-DE')"></Button>
+        <Button text="bg-BG" @tap="changeLocale('bg-BG')"></Button>
+        <Button text="en-UK" @tap="changeLocale('en-UK')"></Button>
         <Button text="fr-FR" @tap="changeLocale('fr-FR')"></Button>
       </StackLayout>
     </GridLayout>
@@ -25,6 +25,7 @@ export default {
   data () {
     return {
       locale: 'en-EN',
+      title: description
     };
   },
   methods: {

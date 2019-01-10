@@ -1,7 +1,7 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { getEvents } from '../data';
 
-const description = 'Day View';
+const description = 'Day view';
 
 export default {
   name: 'DayView',
@@ -23,6 +23,7 @@ export default {
   data () {
     return {
       events: getEvents(10),
+      title: description
     };
   },
   methods: {

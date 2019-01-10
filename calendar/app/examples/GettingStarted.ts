@@ -17,5 +17,10 @@ export default {
     onNavigationButtonTap() {
       frameModule.topmost().goBack();
     },
-  }
+  },
+  data () {
+    return {
+      title: description
+    };
+  },
 };
