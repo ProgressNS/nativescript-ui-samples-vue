@@ -1,52 +1,33 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 import { CompletionMode, DisplayMode, SuggestMode } from 'nativescript-ui-autocomplete';
-import { getCountry, getCountriesCount } from '../data';
+import { getCountry, getCountriesCount, getCountryWithImage } from '../data';
 
-const description = 'Getting Started';
+const description = 'Hint';
 
 export default {
-  name: 'GettingStarted',
+  name: 'Hint',
   description: description,
   template: `
   <Page>
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
+    <StackLayout ios:backgroundColor="#CDCECE" padding="5">
       <RadAutoCompleteTextView ref="autocomplete"
                                hint="select country"
-                               :completionMode="completionMode"
-                               :suggestMode="suggestMode"
                                :displayMode="displayMode"
                                :items="dataItems">
         <SuggestionView ~suggestionView suggestionViewHeight="300">
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
               <StackLayout orientation="horizontal">
-                <Image :src="item.image" width="50"></Image>
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>
           </StackLayout>
         </SuggestionView>
       </RadAutoCompleteTextView>
-      <Label text="SUGGEST MODES" marginTop="5"></Label>
-      <StackLayout orientation="horizontal">
-        <Button margin="5" text="Suggest" @tap="onSuggestSelected()"></Button>
-        <Button margin="5" text="Append" @tap="onAppendSelected()"></Button>
-        <Button margin="5" text="Suggest-Append" @tap="onSuggestAppendSelected()"></Button>
-      </StackLayout>
-      <Label text="COMPLETION MODES"></Label>
-      <StackLayout orientation="horizontal">
-        <Button margin="5" text="StartsWith" @tap="onStartsWithSelected()"></Button>
-        <Button margin="5" text="Contains" @tap="onContainsSelected()"></Button>
-      </StackLayout>
-      <Label text="DISPLAY MODES"></Label>
-      <StackLayout orientation="horizontal">
-        <Button margin="5" text="Plain" @tap="onPlainSelected()"></Button>
-        <Button margin="5" text="Tokens" @tap="onTokensSelected()"></Button>
-      </StackLayout>
     </StackLayout>
   </Page>
   `,

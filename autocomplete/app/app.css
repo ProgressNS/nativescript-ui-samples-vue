@@ -10,11 +10,8 @@
 }
 
 .item {
-  padding: 15 0;
+  padding: 15;
   background-color: white;
-}
-
-.titleLabel {
-    margin: 16;
-    vertical-align: center;
+  font-size: 16;
+  color:#404040;
 }

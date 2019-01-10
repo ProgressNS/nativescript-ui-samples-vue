@@ -4,6 +4,8 @@ import { getExamples } from './examples';
 import * as views from './views';
 
 import RadAutoComplete from 'nativescript-ui-autocomplete/vue';
+import { setCssFileName } from "tns-core-modules/application";
+setCssFileName("app.css");
 
 Vue.use(RadAutoComplete);
 

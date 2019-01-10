@@ -1,17 +1,27 @@
-import AsyncData from './AsyncData';
-import Events from './Events';
-import GettingStarted from './GettingStarted';
-import Layouts from './Layouts';
-import PreselectedItems from './PreselectedItems';
-import ReadOnly from './ReadOnly';
+import AsyncData from './AsyncData/AsyncData';
+import Events from './Events/Events';
+import GettingStarted from './GettingStarted/GettingStarted';
+import CompletionModes from './Completion-modes/Completion-modes';
+import SuggestModes from './Suggest-modes/Suggest-modes';
+import Customization from './Customization/Customization';
+import DisplayModes from './Display-modes/Display-modes';
+import Hint from './Hint/Hint';
+import TokenLayouts from './Token-Layouts/Token-Layouts';
+import PreselectedTokens from './Preselected-tokens/Preselected-tokens';
+import ReadOnly from './ReadOnly/ReadOnly';
 
 export const getExamples = () => {
   return [
     GettingStarted,
-    Layouts,
+    CompletionModes,
+    DisplayModes,
+    TokenLayouts,
+    SuggestModes,
+    Customization,
     Events,
     AsyncData,
     ReadOnly,
-    PreselectedItems,
+    Hint,
+    PreselectedTokens,
   ];
 };

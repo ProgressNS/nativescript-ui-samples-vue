@@ -1,30 +1,27 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
-import { TokenModel } from 'nativescript-ui-autocomplete';
-import { getCountriesCount, getCountry } from '../data';
+import { CompletionMode, DisplayMode, SuggestMode } from 'nativescript-ui-autocomplete';
+import { getCountry, getCountriesCount } from '../data';
 
-const description = 'Preselected Items';
+const description = 'Contains';
 
 export default {
-  name: 'PreselectedItems',
+  name: 'Contains',
   description: description,
   template: `
   <Page>
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
+    <StackLayout ios:backgroundColor="#CDCECE" padding="5">
       <Label text="Select country"></Label>
       <RadAutoCompleteTextView ref="autocomplete"
-                               suggestMode="Suggest"
-                               displayMode="Tokens"
-                               :items="dataItems"
-                               @loaded="onLoaded">
+                               :completionMode="completionMode"
+                               :items="dataItems">
         <SuggestionView ~suggestionView suggestionViewHeight="300">
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
               <StackLayout orientation="horizontal">
-                <Image :src="item.image" width="50"></Image>
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>
@@ -43,19 +40,12 @@ export default {
     return {
       title: description,
       dataItems: dataItems,
+      completionMode: CompletionMode.Contains,
     };
   },
   methods: {
     onNavigationButtonTap() {
       frameModule.topmost().goBack();
-    },
-    onLoaded ({ object }) {
-      object.addToken(
-        this.dataItems.getItem(0)
-      );
-      object.addToken(
-        this.dataItems.getItem(1)
-      );
-    },
-  },
+    }
+  }
 };
