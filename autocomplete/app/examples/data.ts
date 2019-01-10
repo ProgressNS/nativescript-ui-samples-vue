@@ -3,6 +3,9 @@ import { TokenModel } from 'nativescript-ui-autocomplete';
 export const countries = [
   'Australia',
   'Albania',
+  'Austria',
+  'Argentina',
+  'Maldives',
   'Bulgaria',
   'Belgium',
   'Cyprus',
@@ -30,11 +33,18 @@ export const countries = [
   'Slovakia',
   'Turkey',
   'Ukraine',
-  'Vatican',
+  'Vatican City',
+  'Chad',
+  'China',
+  'Chile'
 ];
 
-
 export const getCountry = (i: number) => {
+  const country = countries[i];
+  return new TokenModel(country, null);
+};
+
+export const getCountryWithImage = (i: number) => {
   const country = countries[i];
   return new TokenModel(country, `res://${country.toLowerCase()}`);
 };

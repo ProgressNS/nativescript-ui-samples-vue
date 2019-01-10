@@ -13,7 +13,7 @@ export default {
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
+    <StackLayout ios:backgroundColor="#CDCECE" padding="5">
       <Label text="Select country"></Label>
       <RadAutoCompleteTextView ref="autocomplete"
                                suggestMode="Suggest"
@@ -30,7 +30,6 @@ export default {
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
               <StackLayout orientation="horizontal">
-                <Image :src="item.image" width="50"></Image>
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>

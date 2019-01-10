@@ -3,17 +3,17 @@ import { ObservableArray } from 'tns-core-modules/data/observable-array';
 import { LayoutMode, TokenModel } from 'nativescript-ui-autocomplete';
 import { getCountriesCount, getCountry } from '../data';
 
-const description = 'Layouts';
+const description = 'Switch at runtime';
 
 export default {
-  name: 'Layouts',
+  name: 'Switch at runtime',
   description: description,
   template: `
   <Page>
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
+    <StackLayout ios:backgroundColor="#CDCECE" padding="5">
       <Label text="Select country"></Label>
       <RadAutoCompleteTextView ref="autocomplete"
                                suggestMode="Suggest"
@@ -24,7 +24,6 @@ export default {
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
               <StackLayout orientation="horizontal">
-                <Image :src="item.image" width="50"></Image>
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>
@@ -56,7 +55,7 @@ export default {
     return {
       title: description,
       dataItems: dataItems,
-      layoutMode: LayoutMode.Horizontal,
+      layoutMode: LayoutMode.Wrap,
     };
   },
   methods: {

@@ -4,19 +4,18 @@ export default {
   name: 'Home',
   template: `
     <Page>
-    <StackLayout class="page">
-      <Label class="big" text="Autocomplete examples"></Label>
-      <ListView ref="listView"
-                for="example in examples"
-                @itemTap="goToExample">
-        <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label :text="example.description">
-            </Label>
-          </StackLayout>
-        </v-template>
-      </ListView>
-    </StackLayout>
+      <ActionBar title="AutoComplete Vue">
+      </ActionBar>
+        <ListView ref="listView"
+                  for="example in examples"
+                  @itemTap="goToExample">
+          <v-template>
+            <StackLayout class="item" orientation="vertical">
+              <Label class="titleLabel" :text="example.description">
+              </Label>
+            </StackLayout>
+          </v-template>
+        </ListView>
   </Page>
   `,
   data () {
