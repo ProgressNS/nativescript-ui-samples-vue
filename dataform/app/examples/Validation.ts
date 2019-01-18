@@ -38,7 +38,7 @@ export default {
       personMetadata: {
         'isReadOnly': false,
         'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'validationMode': 'OnLostFocus',
         'propertyAnnotations':
         [
           {
@@ -66,6 +66,7 @@ export default {
           {
             'name': 'password',
             'displayName': 'Password',
+            'editor': 'Password',
             'index': 2,
             'validators': [
               {
@@ -82,6 +83,7 @@ export default {
           {
             'name': 'password2',
             'displayName': 'Repeat Password',
+            'editor': 'Password',
             'index': 3,
             'validators': [
               {
@@ -141,6 +143,12 @@ export default {
         isValid = false;
       } else {
         this.$refs.dataform.notifyValidated('username', true);
+      }
+
+      if (!pPwd.valueCandidate) {
+        pPwd.errorMessage = 'Password is empty.';
+        this.$refs.dataform.notifyValidated('password', false);
+        isValid = false;
       }
 
       if (pPwd2.valueCandidate !== pPwd.valueCandidate) {

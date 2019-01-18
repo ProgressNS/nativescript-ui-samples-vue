@@ -11,11 +11,9 @@ export default {
   <Page>
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
-      <ActionItem text="Immediate" android.position="popup" @tap="onImmediateTap"></ActionItem>
-      <ActionItem text="OnLostFocus" android.position="popup" @tap="onOnLostFocusTap"></ActionItem>
-      <ActionItem text="Manual" android.position="popup" @tap="onManualTap"></ActionItem>
     </ActionBar>
     <StackLayout>
+      <SegmentedBar @selectedIndexChange="onSelectedIndexChanged" :items="segmentedBarItems" v-model="selectedBarIndex"></SegmentedBar>
       <RadDataForm
         ref="dataform"
         :source="person"
@@ -43,6 +41,18 @@ export default {
       text: '',
       validationMode: ValidationMode.Immediate,
       person: new BaseUser(),
+      segmentedBarItems: (function() {
+        const segmentedBarModule = require(
+            "tns-core-modules/ui/segmented-bar");
+        let segmentedBarItem1 = new segmentedBarModule.SegmentedBarItem();
+        segmentedBarItem1.title = "Immediate";
+        let segmentedBarItem2 = new segmentedBarModule.SegmentedBarItem();
+        segmentedBarItem2.title = "OnLostFocus";
+        let segmentedBarItem3 = new segmentedBarModule.SegmentedBarItem();
+        segmentedBarItem3.title = "Manual";
+        return [segmentedBarItem1, segmentedBarItem2, segmentedBarItem3];
+      })(),
+      selectedBarIndex: 0,
       personMetadata: {
         'isReadOnly': false,
         'propertyAnnotations':
@@ -110,6 +120,19 @@ export default {
     },
     updateTextWithResult(result) {
       this.text = `Validation result: ${result}`;
+    },
+    onSelectedIndexChanged() {
+      switch (this.selectedBarIndex) {
+          case 0:
+              this.validationMode = ValidationMode.Immediate;
+              break;
+          case 1:
+              this.validationMode = ValidationMode.OnLostFocus;
+              break;
+          case 2:
+              this.validationMode = ValidationMode.Manual;
+              break;
+      }
     }
   }
 };
