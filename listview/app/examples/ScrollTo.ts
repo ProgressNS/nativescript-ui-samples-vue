@@ -1,5 +1,6 @@
 import { getItemList } from '../data';
 import * as frameModule from "tns-core-modules/ui/frame";
+import { ListViewItemSnapMode } from "nativescript-ui-listview";
 
 const description = 'Scroll To Item';
 
@@ -46,9 +47,10 @@ export default {
     },
     onLoaded () {
       setTimeout(() => {
-        console.log('Programatic scrolling...');
-        this.$refs.listView.scrollToIndex(50);
-      }, 500);
+        const indexToScroll = 49;
+        console.log('Programmatic scrolling to ' + this.itemList[indexToScroll].name + '... ');
+        this.$refs.listView.scrollToIndex(indexToScroll, false, ListViewItemSnapMode.Start);
+      }, 0);
     },
     onScrolled ({ scrollOffset }) {
       this.scrollOffset = scrollOffset;
