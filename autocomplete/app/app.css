@@ -1,17 +1,13 @@
 @import '~nativescript-theme-core/css/core.light.css';
 
-.page {
-  padding-left: 5;
-}
-
-.big {
-  font-size: 20;
-  margin-bottom: 10;
-}
-
 .item {
-  padding: 15;
-  background-color: white;
+  text-align: left;
+  vertical-align: center;
   font-size: 16;
   color:#404040;
+}
+
+.titleLabel {
+  margin: 16;
+  vertical-align: center;
 }
