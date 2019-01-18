@@ -4,14 +4,12 @@ export default {
   name: 'Home',
   template: `
   <Page>
+    <ActionBar title="DataForm Vue">
+    </ActionBar>
     <StackLayout class="page">
       <RadListView ref="listView"
                    for="example in examples"
                    @itemTap="goToExample">
-        <v-template name="header">
-          <Label class="big" text="DataForm examples"></Label>
-        </v-template>
-
         <v-template>
           <StackLayout class="item" orientation="vertical" style="margin-top: 20">
             <Label :text="example.description">
