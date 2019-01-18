@@ -88,61 +88,30 @@ describe("ListView1", () => {
         });
     });
 
-    const multipleItemTemplatesText = "Multiple Templates";
-    describe(multipleItemTemplatesText, () => {
-        it("Navigate to Multiple Templates selector example", async () => {
+    describe("Grid", () => {
+        it("Navigate to Grid Layout example", async () => {
             await navigateBackToHome(driver);
-            await scrollToElement(driver, multipleItemTemplatesText);
-            const multipleItemTemplates = await driver.findElementByText(multipleItemTemplatesText, SearchOptions.exact);
-            await multipleItemTemplates.click();
+            const grid = await driver.findElementByText("Grid Layout", SearchOptions.exact);
+            await grid.click();
 
-            const item0 = await driver.findElementByText("Item 1 selector", SearchOptions.exact);
-            expect(item0).to.exist;
+            const rollsLabel = await driver.findElementByText("Item 6", SearchOptions.exact);
+            expect(rollsLabel).to.exist;
         });
 
-        it("Verify ListView elements are visible", async () => {
-            const redItems = await driver.findElementsByText("red", SearchOptions.exact);
-            expect(redItems.length).to.equal(2);
-
-            const blueItems = await driver.findElementsByText("blue", SearchOptions.exact);
-            expect(blueItems.length).to.equal(2);
-
-            const greenItems = await driver.findElementsByText("green", SearchOptions.exact);
-            expect(greenItems.length).to.equal(2);
-        });
-
-        it("Navigate to Multiple Templates 'if' example", async () => {
-            const multipleItemTemplates = await driver.findElementByText("v-template if", SearchOptions.exact);
-            await multipleItemTemplates.click();
-
-            const item0 = await driver.findElementByText("Item 1 if template", SearchOptions.exact);
-            expect(item0).to.exist;
-        });
-
-        it("Verify ListView elements are visible", async () => {
-            const redItems = await driver.findElementsByText("red", SearchOptions.exact);
-            expect(redItems.length).to.equal(2);
-
-            const blueItems = await driver.findElementsByText("blue", SearchOptions.exact);
-            expect(blueItems.length).to.equal(2);
-
-            const greenItems = await driver.findElementsByText("green", SearchOptions.exact);
-            expect(greenItems.length).to.equal(2);
+        it("Scroll listview to verify more elements are present", async () => {
+            const item18 = await scrollToElement(driver, "Item 19");
+            expect(item18).to.exist;
         });
     });
 
-    const itemLoadingText = "Item Loading";
-    describe(itemLoadingText, () => {
-        it("Navigate to Item Loading example", async () => {
+    describe("Staggered", () => {
+        it("Navigate to Staggered example", async () => {
             await navigateBackToHome(driver);
-            await scrollToElement(driver, itemLoadingText);
-            const itemLoading = await driver.findElementByText(itemLoadingText, SearchOptions.exact);
-            await itemLoading.click();
+            const staggeredItem = await driver.findElementByText("Staggered Layout", SearchOptions.exact);
+            await staggeredItem.click();
 
-            const item1 = await driver.findElementByText("Item 1", SearchOptions.exact);
-            expect(item1).to.exist;
-            const item2 = await driver.findElementByText("Item 2", SearchOptions.exact);
-            expect(item2).to.exist;
+            const item0 = await driver.findElementByText("Item 0", SearchOptions.exact);
+            expect(item0).to.exist;
         });
     });
 
@@ -182,149 +151,42 @@ describe("ListView1", () => {
             let itemUpdated = await driver.findElementByText("This is an updated item", SearchOptions.exact);
             expect(itemUpdated).to.exist;
         });
-
-
     });
-    // TODO
-    // const itemLayoutsText = "Item Layouts";
-    // describe(itemLayoutsText, () => {
-    //     describe("Linear", () => {
-    //         it("Navigate to Linear layout example", async () => {
-    //             await navigateBackToHome(driver);
-    //             await scrollToElement(driver, itemLayoutsText);
-    //             const itemLayout = await driver.findElementByText(itemLayoutsText, SearchOptions.exact);
-    //             await itemLayout.click();
-    //             const linear = await driver.findElementByText("Linear", SearchOptions.exact);
-    //             await linear.click();
 
-    //             const rollsLabel = await driver.findElementByText("These Rolls..", SearchOptions.exact);
-    //             expect(rollsLabel).to.exist;
-    //         });
-    //         it("Scroll listview to verify more elements are present", async () => {
-    //             let listView;
-    //             if (isAndroid) {
-    //                 listView = await driver.findElementByClassName("android.widget.FrameLayout");
-    //             }
-    //             else {
-    //                 listView = await driver.findElementByClassName("XCUIElementTypeCollectionView");
-    //             }
+    const pullToRefreshText = "Pull To Refresh";
+    describe(pullToRefreshText, () => {
+        it("Navigate to Pull to Refresh example", async () => {
+            await navigateBackToHome(driver);
+            const listItem = await scrollToElement(driver, pullToRefreshText);
+            await listItem.click();
+            const header = await driver.findElementByText("Pull to refresh", SearchOptions.exact);
+            expect(header).to.exist;
+        });
 
-    //             const listItem = await listView.scrollTo(
-    //                 Direction.down,
-    //                 () => driver.findElementByText("Rainbow Chocolate Pudding", SearchOptions.exact),
-    //                 600
-    //             );
-    //             expect(listItem).to.exist;
+        it("Pull the listView down to refresh items", async () => {
+            const item = await driver.findElementByText("Apple", SearchOptions.exact);
+            await item.scroll(Direction.up, 600);
+            const itemNew = await driver.findElementByText("Berry", SearchOptions.exact);
+            expect(itemNew).to.exist;
+            const footer = await driver.findElementByText("List with 4 items", SearchOptions.exact);
+            expect(footer).to.exist;
+        });
+    });
 
-    //         });
-    //     });
+    const itemLoadingText = "Item Loading";
+    describe(itemLoadingText, () => {
+        it("Navigate to Item Loading example", async () => {
+            await navigateBackToHome(driver);
+            await scrollToElement(driver, itemLoadingText);
+            const itemLoading = await driver.findElementByText(itemLoadingText, SearchOptions.exact);
+            await itemLoading.click();
 
-    //     describe("Grid", () => {
-    //         it("Navigate to Grid Layout example", async () => {
-    //             await navigateBackToView(driver, itemLayoutsText);
-    //             const grid = await driver.findElementByText("Grid", SearchOptions.exact);
-    //             await grid.click();
-
-    //             const rollsLabel = await driver.findElementByText("These Rolls..", SearchOptions.exact);
-    //             expect(rollsLabel).to.exist;
-
-    //             const iceCream = await driver.findElementByText("Ice-cream Sandwich", SearchOptions.exact);
-    //             expect(iceCream).to.exist;
-    //         });
-
-    //         it("Scroll listview to verify more elements are present", async () => {
-    //             let listView;
-    //             if (isAndroid) {
-    //                 listView = await driver.findElementByClassName("android.widget.FrameLayout");
-    //             }
-    //             else {
-    //                 listView = await driver.findElementByClassName("XCUIElementTypeCollectionView");
-    //             }
-    //             const listItem = await listView.scrollTo(
-    //                 Direction.down,
-    //                 () => driver.findElementByText("Creme Caramel", SearchOptions.exact),
-    //                 600
-    //             );
-    //             expect(listItem).to.exist;
-    //         });
-    //     });
-
-    //     describe("Staggered", () => {
-    //         it("Navigate to Staggered example", async () => {
-    //             await navigateBackToView(driver, itemLayoutsText);
-    //             const staggeredItem = await driver.findElementByText("Staggered", SearchOptions.exact);
-    //             await staggeredItem.click();
-
-    //             const item0 = await driver.findElementByText("Item 0", SearchOptions.exact);
-    //             expect(item0).to.exist;
-    //         });
-
-    //         it("Scroll listview to verify more elements are present", async () => {
-    //             let listView;
-    //             if (isAndroid) {
-    //                 listView = await driver.findElementByClassName("android.widget.FrameLayout");
-    //             }
-    //             else {
-    //                 listView = await driver.findElementByClassName("XCUIElementTypeCollectionView");
-    //             }
-
-    //             const listItem = await listView.scrollTo(
-    //                 Direction.down,
-    //                 () => driver.findElementByText("Item 30", SearchOptions.exact),
-    //                 600
-    //             );
-    //             expect(listItem).to.exist;
-    //         });
-    //     });
-
-    //     describe("Change at runtime example", () => {
-    //         it("Navigate to change at runtime example", async () => {
-    //             await navigateBackToView(driver, itemLayoutsText);
-    //             const staggeredItem = await driver.findElementByText("Change at runtime", SearchOptions.exact);
-    //             await staggeredItem.click();
-
-    //             const linearBtn = await driver.findElementByText("LINEAR", SearchOptions.exact);
-    //             expect(linearBtn).to.exist;
-    //         });
-
-    //         it("Change layouts to Grid and verify listview elements", async () => {
-    //             const gridBtn = await driver.findElementByText("GRID", SearchOptions.exact);
-    //             await gridBtn.click();
-    //             let iceCream;
-    //             if (isAndroid) {
-    //                 const listView = await driver.findElementByClassName("android.widget.FrameLayout");
-    //                 iceCream = await listView.scrollTo(
-    //                     Direction.down,
-    //                     () => driver.findElementByText("Ice-cream Sandwich", SearchOptions.exact),
-    //                     600
-    //                 );
-    //             }
-    //             else {
-    //                 iceCream = await driver.findElementByText("Ice-cream Sandwich", SearchOptions.exact);
-    //             }
-    //             expect(iceCream).to.exist;
-    //         });
-
-    //         it("Change layout to staggered and verify listView elements", async () => {
-    //             const staggeredBtn = await driver.findElementByText("STAGGERED", SearchOptions.exact);
-    //             await staggeredBtn.click();
-    //             let caramelItem;
-    //             if (isAndroid) {
-    //                 const listView = await driver.findElementByClassName("android.widget.FrameLayout");
-    //                 caramelItem = await listView.scrollTo(
-    //                     Direction.down,
-    //                     () => driver.findElementByText("Creme Caramel", SearchOptions.exact),
-    //                     800
-    //                 );
-    //             }
-    //             else {
-    //                 caramelItem = await driver.findElementByText("Creme Caramel", SearchOptions.exact);
-    //             }
-    //             expect(caramelItem).to.exist;
-    //         });
-    //     });
-
-    // });
+            const item1 = await driver.findElementByText("Item 1", SearchOptions.exact);
+            expect(item1).to.exist;
+            const item2 = await driver.findElementByText("Item 2", SearchOptions.exact);
+            expect(item2).to.exist;
+        });
+    });
 
     const itemReorderText = "Item Reorder";
     describe(itemReorderText, () => {
@@ -398,23 +260,60 @@ describe("ListView1", () => {
         });
     });
 
-    const pullToRefreshText = "Pull To Refresh";
-    describe(pullToRefreshText, () => {
-        it("Navigate to Pull to Refresh example", async () => {
+    const multipleItemTemplatesText = "Multiple Templates";
+    describe(multipleItemTemplatesText, () => {
+        it("Navigate to Multiple Templates selector example", async () => {
             await navigateBackToHome(driver);
-            const listItem = await scrollToElement(driver, pullToRefreshText);
-            await listItem.click();
-            const header = await driver.findElementByText("Pull to refresh", SearchOptions.exact);
-            expect(header).to.exist;
+            await scrollToElement(driver, multipleItemTemplatesText);
+            const multipleItemTemplates = await driver.findElementByText(multipleItemTemplatesText, SearchOptions.exact);
+            await multipleItemTemplates.click();
+
+            const item0 = await driver.findElementByText("Item 1 selector", SearchOptions.exact);
+            expect(item0).to.exist;
         });
 
-        it("Pull the listView down to refresh items", async () => {
-            const item = await driver.findElementByText("Apple", SearchOptions.exact);
-            await item.scroll(Direction.up, 600);
-            const itemNew = await driver.findElementByText("Berry", SearchOptions.exact);
-            expect(itemNew).to.exist;
-            const footer = await driver.findElementByText("List with 4 items", SearchOptions.exact);
-            expect(footer).to.exist;
+        it("Verify ListView elements are visible", async () => {
+            const redItems = await driver.findElementsByText("red", SearchOptions.exact);
+            expect(redItems.length).to.equal(2);
+
+            const blueItems = await driver.findElementsByText("blue", SearchOptions.exact);
+            expect(blueItems.length).to.equal(2);
+
+            const greenItems = await driver.findElementsByText("green", SearchOptions.exact);
+            expect(greenItems.length).to.equal(2);
+        });
+
+        it("Navigate to Multiple Templates 'if' example", async () => {
+            const multipleItemTemplates = await driver.findElementByText("v-template if", SearchOptions.exact);
+            await multipleItemTemplates.click();
+
+            const item0 = await driver.findElementByText("Item 1 if template", SearchOptions.exact);
+            expect(item0).to.exist;
+        });
+
+        it("Verify ListView elements are visible", async () => {
+            const redItems = await driver.findElementsByText("red", SearchOptions.exact);
+            expect(redItems.length).to.equal(2);
+
+            const blueItems = await driver.findElementsByText("blue", SearchOptions.exact);
+            expect(blueItems.length).to.equal(2);
+
+            const greenItems = await driver.findElementsByText("green", SearchOptions.exact);
+            expect(greenItems.length).to.equal(2);
+        });
+    });
+
+    describe("Scroll to item", () => {
+        it("Initially scroll to item", async () => {
+            await navigateBackToHome(driver);
+            await scrollToElement(driver, swipeActionText);
+            const scrollToItem = await scrollToElement(driver, "Scroll To Item");
+            await scrollToItem.click();
+
+            const scrollLabel = await driver.findElementByText("Scrolled to", SearchOptions.contains);
+            expect(scrollLabel).to.exist;
+            const item20 = await driver.findElementByText("Item 50", SearchOptions.exact);
+            expect(item20).to.exist;
         });
     });
 
@@ -438,7 +337,7 @@ describe("ListView1", () => {
                 const wd = driver.wd();
                 const action = new wd.TouchAction(driver.driver);
                 action.press({ x: centerX, y: centerY })
-                    .wait(100)
+                    .wait(150)
                     .moveTo({ x: 10, y: centerY })
                     .release();
                 await action.perform();
@@ -468,7 +367,7 @@ describe("ListView1", () => {
                 const wd = driver.wd();
                 const action = new wd.TouchAction(driver.driver);
                 action.press({ x: centerX, y: centerY })
-                    .wait(100)
+                    .wait(200)
                     .moveTo({ x: centerX + centerX / 2, y: centerY })
                     .release();
                 await action.perform();

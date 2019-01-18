@@ -88,6 +88,7 @@ export default {
       currentList: getObservableList(),
       createsCounter: [0, 0, 0],
       useObservable: true,
+      biggestDeletedItem: 0,
     };
   },
   components: { RadListItem },
@@ -107,30 +108,39 @@ export default {
     },
     addItem() {
       console.log(`Push ${this.nextItem}`);
+      const next = this.nextItem;
       this.currentList.push(this.nextItem);
+      if (this.createsCounter.length < this.currentList.length && next <= this.biggestDeletedItem) {
+        this.createsCounter.push(1);
+      }
     },
     deleteItem() {
       console.log(`Delete ${this.lastItem}`);
       if (this.currentList.length === 0) {
         if (this.useObservable) {
           this.currentList = new ObservableArray(0);
+          this.createsCounter = [];
         }
         return;
+      }
+      if (this.biggestDeletedItem < this.lastItem) {
+        this.biggestDeletedItem = this.lastItem;
       }
       this.deletedItems.push(this.lastItem);
 
       const index = this.currentList.length - 1;
       this.currentList.splice(index, 1);
+      this.createsCounter.splice(index, 1);
 
       if (this.currentList.length === 0) {
         if (this.useObservable) {
           this.currentList = new ObservableArray(0);
+          this.createsCounter = [];
         }
       }
     },
     markCreation(item) {
       console.log(`Mark item creation for ${item}...`);
-
       if (this.createsCounter.length < this.currentList.length) {
         this.createsCounter.push(1);
       } else {
@@ -145,13 +155,16 @@ export default {
       }
     },
     onSelectObservable() {
+      this.useObservable = true;
       this.currentList = getObservableList();
-      this.createsCounter = [1, 1, 1];
+      this.createsCounter = [0, 0, 0];
+      this.biggestDeletedItem = 0;
     },
     onSelectNonObservable() {
       this.useObservable = false;
       this.currentList = getList();
-      this.createsCounter = [1, 1, 1];
+      this.createsCounter = [0, 0, 0];
+      this.biggestDeletedItem = 0;
     },
   },
   created () {
