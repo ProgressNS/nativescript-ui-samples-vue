@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { getEvents } from '../data';
+import { getCalendarDayEvents } from '../data';
 
 const description = 'Day view';
 
@@ -22,7 +22,7 @@ export default {
   `,
   data () {
     return {
-      events: getEvents(10),
+      events: getCalendarDayEvents(),
       title: description
     };
   },

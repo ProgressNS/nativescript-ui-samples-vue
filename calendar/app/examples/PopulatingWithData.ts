@@ -11,8 +11,8 @@ export default {
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <GridLayout orientation="vertical" rows="*, auto">
-      <RadCalendar ref="calendar"
+    <GridLayout orientation="vertical" rows="*, 100">
+      <RadCalendar row="0" ref="calendar"
         :eventSource="events" @dateSelected="onDateSelected">
       </RadCalendar>
       <StackLayout row="1">

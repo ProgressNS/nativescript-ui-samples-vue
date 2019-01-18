@@ -38,7 +38,8 @@ export default {
   data () {
     return {
       transitionMode: CalendarTransitionMode.None,
-      title: description
+      title: description,
+      isAndroid: isAndroid
     };
   },
   methods: {

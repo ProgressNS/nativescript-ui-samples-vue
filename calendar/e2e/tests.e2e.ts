@@ -165,7 +165,6 @@ describe("Calendar", () => {
             expect(multipleOption).to.exist;
             const rangeOption = await driver.findElementByText("Range");
             expect(rangeOption).to.exist;
-            await driver.navBack();
         });
     });
     describe(transitionModesText, () => {
@@ -203,7 +202,6 @@ describe("Calendar", () => {
                 const overlapOption = await driver.findElementByText("Overlap");
                 expect(overlapOption).to.exist;
             }
-            await driver.navBack();
         });
     });
     describe(stylingText, () => {
@@ -249,7 +247,7 @@ describe("Calendar", () => {
             expect(currentDay).to.exist;
             const monday = await driver.findElementByText("Mon");
             expect(monday).to.exist;
-            const note = await driver.findElementByText("event 4");
+            const note = await driver.findElementByText("Very important meeting");
             await note.click();
             const event = await driver.findElementByText("Event Selected");
             expect(event).to.exist;
