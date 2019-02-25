@@ -17,7 +17,7 @@ export default {
         :eventSource="events"
         :eventsViewMode="eventsViewMode">
       </RadCalendar>
-      <StackLayout row="1" orientation="horizontal">
+      <StackLayout row="1" orientation="horizontal" class="m-10">
         <Button text="None"  @tap="onNoneTap"></Button>
         <Button text="Inline"  @tap="onInlineTap"></Button>
         <Button text="Popover" @tap="onPopoverTap"></Button>
