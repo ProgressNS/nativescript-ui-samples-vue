@@ -3,10 +3,8 @@ import Vue from 'nativescript-vue';
 import { getExamples } from './examples';
 import * as views from './views';
 
-import RadListView from 'nativescript-ui-listview/vue';
 import RadDataForm from 'nativescript-ui-dataform/vue';
 
-Vue.use(RadListView);
 Vue.use(RadDataForm);
 
 for (let comp of getExamples()) {

@@ -10,8 +10,7 @@ export default {
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <RadDataForm
-      :source="person">
+    <RadDataForm :source="person">
     </RadDataForm>
   </Page>
   `,
