@@ -4,7 +4,8 @@
         "target": "es6",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "importHelpers": false,
+        "importHelpers": true,
+        "noEmitHelpers": false,
         "types": [
             "node",
             "mocha",
