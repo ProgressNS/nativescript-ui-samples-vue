@@ -21,8 +21,8 @@ export default {
                    @scrolled="onScrolled">
         <v-template>
           <StackLayout class="item" orientation="vertical">
-            <Label class="big" :text="item.name"></Label>
-            <Label :text="item.description"></Label>
+            <Label :text="item.name" class="nameLabel"></Label>
+            <Label :text="item.description" class="descriptionLabel"></Label>
           </StackLayout>
         </v-template>
       </RadListView>
@@ -46,11 +46,14 @@ export default {
       console.log(`Tapped on ${item.name}`);
     },
     onLoaded () {
-      setTimeout(() => {
+      // in order to avoid race conditions (only on iOS),
+      // in which the UI may not be completely updated here
+      // we use this.$nextTick call
+      this.$nextTick(() => {
         const indexToScroll = 49;
         console.log('Programmatic scrolling to ' + this.itemList[indexToScroll].name + '... ');
         this.$refs.listView.scrollToIndex(indexToScroll, false, ListViewItemSnapMode.Start);
-      }, 0);
+      });
     },
     onScrolled ({ scrollOffset }) {
       this.scrollOffset = scrollOffset;

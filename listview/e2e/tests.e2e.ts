@@ -2,7 +2,9 @@ import { AppiumDriver, createDriver, SearchOptions, Direction } from "nativescri
 import { expect } from "chai";
 import { isSauceLab, runType } from "nativescript-dev-appium/lib/parser";
 import { navigateBackToHome, navigateBackToView, scrollToElement, swipe, swipeToElement } from "./helper";
-
+const fs = require('fs');
+const addContext = require('mochawesome/addContext');
+const rimraf = require('rimraf');
 const isSauceRun = isSauceLab;
 const isAndroid: boolean = runType.includes("android");
 
@@ -12,6 +14,11 @@ describe("ListView1", () => {
     before(async () => {
         driver = await createDriver();
         driver.defaultWaitTime = 15000;
+        let dir = "mochawesome-report";
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
+        }
+        rimraf('mochawesome-report/*', function () { });
     });
 
     after(async () => {
@@ -25,8 +32,15 @@ describe("ListView1", () => {
     });
 
     afterEach(async function () {
-        if (this.currentTest.state === "failed") {
-            await driver.logScreenshot(this.currentTest.title);
+        if (this.currentTest.state && this.currentTest.state === "failed") {
+            let png = await driver.logScreenshot(this.currentTest.title);
+            fs.copyFile(png, './mochawesome-report/' + this.currentTest.title + '.png', function (err) {
+                if (err) {
+                    throw err;
+                }
+                console.log('Screenshot saved.');
+            });
+            addContext(this, './' + this.currentTest.title + '.png');
         }
     });
 
@@ -43,7 +57,7 @@ describe("ListView1", () => {
 
         it("Verify ListView length", async () => {
             const items = await driver.findElementsByText("description", SearchOptions.contains);
-            expect(items.length).to.equal(isAndroid ? 9 : 10);
+            expect(items.length).to.equal(10);
 
         });
 
@@ -159,7 +173,7 @@ describe("ListView1", () => {
             await navigateBackToHome(driver);
             const listItem = await scrollToElement(driver, pullToRefreshText);
             await listItem.click();
-            const header = await driver.findElementByText("Pull to refresh", SearchOptions.exact);
+            const header = await driver.findElementByText(pullToRefreshText, SearchOptions.exact);
             expect(header).to.exist;
         });
 
@@ -351,8 +365,10 @@ describe("ListView1", () => {
                     toY: centerY
                 });
             }
+            await driver.wait(1000);
             let delBtn = await driver.findElementByText("delete", SearchOptions.exact);
             await delBtn.click();
+            await driver.wait(1000);
             item = await driver.findElementByTextIfExists("Item 1", SearchOptions.exact);
             expect(item).to.be.undefined;
         });

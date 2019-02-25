@@ -16,8 +16,9 @@ export default {
       <RadListView for="item in itemList"
                    @itemLoading="onItemLoading">
         <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label id="label" class="big" :text="item.name"></Label>
+          <StackLayout class="item p-10" orientation="vertical">
+            <Label id="label" :text="item.name" class="nameLabel m-t-10"></Label>
+            <Label id="label" :text="item.description" class="descriptionLabel"></Label>
           </StackLayout>
         </v-template>
       </RadListView>

@@ -17,9 +17,8 @@ export default {
                    itemReorder="true"
                    @itemReordered="onItemReordered">
         <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label class="big" :text="item.name"></Label>
-            <Label :text="item.description"></Label>
+          <StackLayout class="item m-10" orientation="vertical">
+            <Label :text="item.name" class="nameLabel"></Label>
           </StackLayout>
         </v-template>
       </RadListView>

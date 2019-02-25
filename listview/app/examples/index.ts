@@ -1,6 +1,7 @@
 import GettingStarted from './GettingStarted';
 import GettingStartedHo from './GettingStartedHo';
 import GridLayout from './GridLayout';
+import ItemAnimations from './ItemAnimations';
 import ItemLoading from './ItemLoading';
 import ItemReorder from './ItemReorder';
 import ItemSelection from './ItemSelection';
@@ -10,7 +11,8 @@ import PullToRefresh from './PullToRefresh';
 import ScrollTo from './ScrollTo';
 import StaggeredLayout from './StaggeredLayout';
 import SwipeActions from './SwipeActions';
-import ItemAnimations from './ItemAnimations';
+import Group from './Group';
+import TemplateGroup from './TemplateGroup';
 
 export const getExamples = () => {
   return [
@@ -24,6 +26,8 @@ export const getExamples = () => {
     ItemReorder,
     ItemSelection,
     MultipleTemplates,
+    Group,
+    TemplateGroup,
     ScrollTo,
     SwipeActions,
     Observable,

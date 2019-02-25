@@ -20,15 +20,15 @@ export default {
                    @itemSelected="onItemSelected"
                    @itemDeselected="onItemDeselected">
         <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label class="big" :text="item.name"></Label>
-            <Label :text="item.description"></Label>
+          <StackLayout class="item p-10" orientation="vertical">
+            <Label :text="item.name" class="nameLabel m-t-10"></Label>
+            <Label :text="item.description" class="descriptionLabel"></Label>
           </StackLayout>
         </v-template>
         <v-template if="$selected">
-          <StackLayout class="item selected" orientation="vertical">
-            <Label class="big" :text="item.name"></Label>
-            <Label :text="item.description"></Label>
+          <StackLayout class="item p-10 selected" orientation="vertical">
+            <Label :text="item.name" class="nameLabel m-t-10"></Label>
+            <Label :text="item.description" class="descriptionLabel"></Label>
           </StackLayout>
         </v-template>
       </RadListView>

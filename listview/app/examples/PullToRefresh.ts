@@ -16,16 +16,10 @@ export default {
                    pullToRefresh="true"
                    @itemTap="onItemTap"
                    @pullToRefreshInitiated="onPullToRefreshInitiated">
-        <v-template name="header">
-          <StackLayout class="header">
-            <Label text="Pull to refresh"></Label>
-          </StackLayout>
-        </v-template>
-
         <v-template>
           <StackLayout class="item" orientation="vertical">
-            <Label :text="fruit.name">
-            </Label>
+            <Label :text="fruit.name" class="titleLabel"></Label>
+            <StackLayout height="1" backgroundColor="#EEEEEE"></StackLayout>
           </StackLayout>
         </v-template>
 
@@ -34,8 +28,7 @@ export default {
             <Label :text="footerText"></Label>
           </StackLayout>
         </v-template>
-
-    </RadListView>
+      </RadListView>
     </StackLayout>
   </Page>
   `,
@@ -63,7 +56,10 @@ export default {
   methods: {
     onPullToRefreshInitiated ({ object }) {
       console.log('Pulling...');
-      setTimeout(() => {
+      // in order to avoid race conditions (only on iOS),
+      // in which the UI may not be completely updated here
+      // we use this.$nextTick call
+      this.$nextTick(() => {
         this.fruitList.push({
           name: 'Berry',
         });
