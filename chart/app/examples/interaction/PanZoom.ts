@@ -42,7 +42,6 @@ export default {
     linearAxisZoom.allowZoom = true;
 
     let linearAxisZoomPan = new LinearAxis();
-    linearAxisZoomPan = new LinearAxis();
     linearAxisZoomPan.horizontalLocation = "Right";
     linearAxisZoomPan.allowZoom = true;
     linearAxisZoomPan.allowPan = true;
