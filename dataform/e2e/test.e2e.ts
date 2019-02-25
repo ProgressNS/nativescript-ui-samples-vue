@@ -3,7 +3,9 @@ import { expect } from "chai";
 import { isSauceLab, runType } from "nativescript-dev-appium/lib/parser";
 import { navigateToHome, clickBelowElementCenter } from "./helper";
 import { ImageOptions } from "nativescript-dev-appium/lib/image-options";
-
+const fs = require('fs');
+const rimraf = require('rimraf');
+const addContext = require('mochawesome/addContext');
 const isSauceRun = isSauceLab;
 const isAndroid: Boolean = runType.includes("android");
 
@@ -13,6 +15,11 @@ describe("DataForm", () => {
     before(async () => {
         driver = await createDriver();
         driver.defaultWaitTime = 10000;
+        let dir = "mochawesome-report";
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
+        }
+        rimraf('mochawesome-report/*', function () { });
     });
 
     after(async () => {
@@ -26,8 +33,15 @@ describe("DataForm", () => {
     });
 
     afterEach(async function () {
-        if (this.currentTest.state === "failed") {
-            await driver.logScreenshot(this.currentTest.title);
+        if (this.currentTest.state && this.currentTest.state === "failed") {
+            let png = await driver.logScreenshot(this.currentTest.title);
+            fs.copyFile(png, './mochawesome-report/' + this.currentTest.title + '.png', function (err) {
+                if (err) {
+                    throw err;
+                }
+                console.log('Screenshot saved.');
+            });
+            addContext(this, './' + this.currentTest.title + '.png');
         }
     });
 
@@ -353,6 +367,10 @@ describe("DataForm", () => {
             const mailValidation = await driver.findElementByText("Please provide your", SearchOptions.contains);
             expect(mailValidation).to.exist;
             await pass.sendKeys("pass");
+            try {
+                await driver.driver.hideDeviceKeyboard();
+            } catch (error) {
+            }
             const passValidation = await driver.findElementByText("The value entered", SearchOptions.contains);
             expect(passValidation).to.exist;
         });
@@ -380,6 +398,10 @@ describe("DataForm", () => {
             let passValidation = await driver.findElementByTextIfExists("The value entered", SearchOptions.contains);
             expect(passValidation).to.be.undefined;
             await mail.click();
+            try {
+                await driver.driver.hideDeviceKeyboard();
+            } catch (error) {
+            }
             passValidation = await driver.findElementByText("The value entered", SearchOptions.contains);
             expect(passValidation).to.exist;
         });
