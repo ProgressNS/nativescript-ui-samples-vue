@@ -1,13 +1,22 @@
 @import '~nativescript-theme-core/css/core.light.css';
 
-.titleLabel {
-    margin: 16;
-    vertical-align: center;
+.item {
+  text-align: left;
+  vertical-align: center;
+  font-size: 16;
+  color:#404040;
 }
 
-.itemStackLayout {
-    text-align: left;
-    vertical-align: center;
-    font-size: 16;
-    color:#404040;
+.gauge {
+  margin: 10;
+}
+
+.titleLabel {
+  margin: 16;
+  vertical-align: center;
+}
+
+button {
+  vertical-align: center;
+  margin-bottom: 10;
 }
