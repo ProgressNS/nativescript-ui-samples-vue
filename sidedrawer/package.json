@@ -16,7 +16,7 @@
     "nativescript-theme-core": "~1.0.4",
     "nativescript-ui-sidedrawer": "*",
     "nativescript-vue": "~2.0.2",
-    "tns-core-modules": "^5.1.0",
+    "tns-core-modules": "^5.2.0",
     "tslib": "^1.9.3",
     "vue": "^2.5.17",
     "nativescript-ui-core": "*"
@@ -38,8 +38,8 @@
     "karma-nativescript-launcher": "^0.4.0",
     "mocha": "^3.3.0",
     "nativescript-dev-appium": "^4.0.9",
-    "nativescript-dev-typescript": "~0.7.0",
-    "nativescript-dev-webpack": "~0.18.0",
+    "nativescript-dev-typescript": "~0.8.0",
+    "nativescript-dev-webpack": "~0.20.0",
     "nativescript-vue-template-compiler": "~2.0.2",
     "shelljs": "^0.8.2",
     "vue-loader": "~15.4.2"
