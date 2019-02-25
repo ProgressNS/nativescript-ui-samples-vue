@@ -15,7 +15,7 @@ export default {
       <RadCalendar
         :selectionMode="selectionMode">
       </RadCalendar>
-      <StackLayout orientation="vertical" row="1">
+      <StackLayout orientation="horizontal" row="1" class="m-10">
         <Button text="None" @tap="onNoneTap"></Button>
         <Button text="Single" @tap="onSingleTap"></Button>
         <Button text="Multiple" @tap="onMultipleTap"></Button>

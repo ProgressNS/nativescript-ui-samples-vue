@@ -15,18 +15,18 @@ export default {
       <RadCalendar
         :transitionMode="transitionMode">
       </RadCalendar>
-      <StackLayout row="1" orientation="horizontal">
+      <StackLayout row="1" orientation="horizontal" class="m-10">
         <Button text="None"  @tap="onNoneTap"></Button>
         <Button text="Slide"  @tap="onSlideTap"></Button>
         <Button text="Stack"  @tap="onStackTap"></Button>
       </StackLayout>
-      <StackLayout v-show="isAndroid" row="2" orientation="horizontal">
+      <StackLayout v-show="isAndroid" row="2" orientation="horizontal" class="m-10">
         <Button text="Plain"  @tap="onPlainTap"></Button>
         <Button text="Free"  @tap="onFreeTap"></Button>
         <Button text="Combo"  @tap="onComboTap"></Button>
         <Button text="Overlap"  @tap="onOverlapTap"></Button>
       </StackLayout>
-      <StackLayout v-show="!isAndroid" row="2" orientation="horizontal">
+      <StackLayout v-show="!isAndroid" row="2" orientation="horizontal" class="m-10">
         <Button text="Flip"  @tap="onFlipTap"></Button>
         <Button text="Fold"  @tap="onFoldTap"></Button>
         <Button text="Float"  @tap="onFloatTap"></Button>

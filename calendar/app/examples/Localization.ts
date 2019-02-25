@@ -13,7 +13,7 @@ export default {
     <GridLayout
       orientation="vertical" rows="*, auto">
       <RadCalendar ref="calendar" :locale="locale"></RadCalendar>
-      <StackLayout orientation="vertical" row="1">
+      <StackLayout orientation="horizontal" row="1" class="m-10">
         <Button text="de-DE" @tap="changeLocale('de-DE')"></Button>
         <Button text="bg-BG" @tap="changeLocale('bg-BG')"></Button>
         <Button text="en-UK" @tap="changeLocale('en-UK')"></Button>
