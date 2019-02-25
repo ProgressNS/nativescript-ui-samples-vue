@@ -1,42 +1,45 @@
-import { getItemList } from '../data';
 import * as frameModule from "tns-core-modules/ui/frame";
 
-const description = 'Getting Started';
+const description = 'Group';
 
 export default {
-  name: 'GettingStarted',
+  name: 'Group',
   description: description,
   template: `
   <Page>
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
-      <RadListView ref="listView"
-                   for="item in itemList"
-                   @itemTap="onItemTap">
+    <GridLayout orientation="vertical" rows="auto, *">
+      <RadListView for="item in itemList" :groupingFunction="getItemGroup">
         <v-template>
           <StackLayout class="item" orientation="vertical">
             <Label :text="item.name" class="nameLabel"></Label>
-            <Label :text="item.description" class="descriptionLabel"></Label>
           </StackLayout>
         </v-template>
       </RadListView>
-    </StackLayout>
+    </GridLayout>
   </Page>
   `,
   data() {
     return {
       title: description,
-      itemList: getItemList(10),
+      itemList: [
+        { name: 'Item 1', group: 'Ready' },
+        { name: 'Item 2', group: 'Completed' },
+        { name: 'Item 3', group: 'Completed' },
+        { name: 'Item 4', group: 'Ready' },
+        { name: 'Item 5', group: 'Completed' },
+        { name: 'Item 6', group: 'Completed' },
+      ],
     };
   },
   methods: {
-    onItemTap({ item }) {
-      console.log(`Tapped on ${item.name}`);
-    },
     onNavigationButtonTap() {
       frameModule.topmost().goBack();
-    }
+    },
+    getItemGroup(item) {
+      return item.group;
+    },
   }
 };

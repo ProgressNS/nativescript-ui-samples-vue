@@ -29,9 +29,7 @@ const RadListItem = {
   `,
   props: ['item'],
   created() {
-    setTimeout(() => {
-      this.$emit('create-item');
-    }, 100);
+    this.$emit('create-item');
   },
   computed: {
     itemText() {
@@ -40,12 +38,10 @@ const RadListItem = {
   },
   watch: {
     item (value, oldValue) {
-      setTimeout(() => {
-        this.$emit('update-item', {
-          old: oldValue,
-          new: value
-        });
-      }, 100);
+      this.$emit('update-item', {
+        old: oldValue,
+        new: value
+      });
     },
   },
 };

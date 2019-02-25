@@ -31,8 +31,8 @@ export default {
       <RadListView  ref="listView" for="item in itemList" :itemInsertAnimation="itemInsertAnimation" :itemDeleteAnimation="itemDeleteAnimation" row="1">
       <v-template>
         <StackLayout class="item" orientation="vertical" @longPress="onItemLongPress({index,item})" @tap="onItemTap({index,item})">
-          <Label class="big" :text="item.name"></Label>
-          <Label :text="item.description"></Label>
+          <Label :text="item.name" class="nameLabel"></Label>
+          <Label :text="item.description" class="descriptionLabel"></Label>
         </StackLayout>
       </v-template>
       </RadListView>

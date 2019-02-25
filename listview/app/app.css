@@ -1,18 +1,42 @@
-.big {
+@import '~nativescript-theme-core/css/core.light.css';
+
+.nameLabel {
   font-size: 20
 }
 
+.descriptionLabel {
+  font-size: 14;
+}
+
+.titleLabel {
+  margin: 16;
+  vertical-align: center;
+}
+
 .item {
-  padding: 5 0;
+  text-align: left;
+  vertical-align: center;
+  font-size: 16;
+  color: #404040;
   background-color: white;
 }
 
-.header {
-  background-color: #a2ebfd
+.grid-item {
+  /* the same as the .item styles
+  except for the vertical-align: center
+  which causes a weird infinite recursion
+  and a call stack overflow measuring the
+  item's vertical position */
+  text-align: left;
+  font-size: 16;
+  color: #404040;
+  background-color: white;
 }
 
 .footer {
-  background-color: #eeeeee;
+  margin: 20;
+  background-color: white;
+  text-align: center;
 }
 
 .swipe-item {
@@ -41,7 +65,7 @@
 }
 
 .selected {
-  background-color: #444444;
+  background-color: #aaaaaa;
 }
 
 .iosButton {

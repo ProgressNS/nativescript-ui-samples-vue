@@ -40,8 +40,8 @@ export default {
                    @itemTap="onItemTap">
         <v-template>
           <StackLayout class="item" orientation="vertical">
-            <Label class="big" :text="item.name"></Label>
-            <Label :text="item.description" textWrap="true"></Label>
+            <Label :text="item.name" class="nameLabel"></Label>
+            <Label :text="item.description" class="descriptionLabel" textWrap="true"></Label>
           </StackLayout>
         </v-template>
       </RadListView>

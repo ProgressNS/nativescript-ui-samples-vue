@@ -1,5 +1,5 @@
-import { simpleItemList, getItemList } from '../data';
-import * as frameModule from "tns-core-modules/ui/frame";
+import { getItemList } from '../data';
+import * as frameModule from 'tns-core-modules/ui/frame';
 
 const description = 'Swipe Actions';
 
@@ -15,12 +15,11 @@ export default {
       <RadListView ref="listView"
                    for="item in itemList"
                    swipeActions="true"
-                   @loaded="onLoaded"
                    @itemSwipeProgressStarted="onSwipeStarted">
         <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label class="big" :text="item.name"></Label>
-            <Label :text="item.description"></Label>
+          <StackLayout class="item p-t-10" orientation="vertical">
+            <Label :text="item.name" class="nameLabel"></Label>
+            <Label :text="item.description" class="descriptionLabel"></Label>
           </StackLayout>
         </v-template>
 
@@ -43,7 +42,7 @@ export default {
   data () {
     return {
       title: description,
-      itemList: simpleItemList,
+      itemList: getItemList(20),
     };
   },
 
@@ -71,10 +70,5 @@ export default {
     onNavigationButtonTap() {
       frameModule.topmost().goBack();
     },
-    onLoaded () {
-      setTimeout(() => {
-        this.itemList = getItemList(20);
-      }, 0);
-    }
   }
 };

@@ -17,9 +17,9 @@ export default {
                    itemHeight="100"
                    @itemTap="onItemTap">
         <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label class="big" :text="item.name"></Label>
-            <Label :text="item.description"></Label>
+          <StackLayout class="grid-item" orientation="vertical">
+            <Label :text="item.name" class="nameLabel"></Label>
+            <Label :text="item.description" class="descriptionLabel"></Label>
           </StackLayout>
         </v-template>
       </RadListView>
