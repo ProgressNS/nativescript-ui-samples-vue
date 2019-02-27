@@ -70,7 +70,9 @@
         "offsetPixels": 87,
         "noReset": true,
         "fullReset": false,
-        "app": ""
+        "app": "",
+        "idleTimeout": 120,
+        "automationName": "Appium"
     },
     "sim.iPhoneX.iOS113": {
         "platformName": "iOS",
