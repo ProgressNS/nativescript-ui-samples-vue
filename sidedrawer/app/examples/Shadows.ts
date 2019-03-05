@@ -18,11 +18,11 @@ export default {
     <RadSideDrawer ref="drawer"
                    :drawerLocation="location"
                    :shadowColor="shadowColor">
-      <StackLayout ~drawerContent class="sideStackLayout">
+      <GridLayout rows="auto, *" ~drawerContent class="sideStackLayout">
           <StackLayout class="sideTitleStackLayout">
               <Label text="Navigation Menu"></Label>
           </StackLayout>
-          <ScrollView>
+          <ScrollView row="1">
               <StackLayout class="sideStackLayout">
                   <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
                   <Label text="Social" class="sideLabel"></Label>
@@ -35,18 +35,16 @@ export default {
                   <Button text="Close Drawer" @tap="onCloseDrawerTap()"></Button>
               </StackLayout>
           </ScrollView>
-      </StackLayout>
-      <StackLayout ~mainContent class="mainContent">
-          <ScrollView>
-              <StackLayout>
-                  <Label text="SideDrawer for NativeScript is shown from the left side of the app window by default.You can change this behavior by setting the drawerLocation property to Left, Top, Right or Bottom."
-                      textWrap="true" class="drawerContentText"></Label>
-                  <Button text="Default shadow" @tap="onDefaultShadowTap()" class="drawerContentButton"></Button>
-                  <Button text="Red shadow" @tap="onRedShadowTap()" class="drawerContentButton"></Button>
-                  <Button text="No shadow" @tap="onNoShadowTap()" class="drawerContentButton"></Button>
-              </StackLayout>
-          </ScrollView>
-      </StackLayout>
+      </GridLayout>
+      <ScrollView ~mainContent class="mainContent">
+          <StackLayout>
+              <Label text="SideDrawer for NativeScript is shown from the left side of the app window by default.You can change this behavior by setting the drawerLocation property to Left, Top, Right or Bottom."
+                  textWrap="true" class="drawerContentText"></Label>
+              <Button text="Default shadow" @tap="onDefaultShadowTap()" class="drawerContentButton"></Button>
+              <Button text="Red shadow" @tap="onRedShadowTap()" class="drawerContentButton"></Button>
+              <Button text="No shadow" @tap="onNoShadowTap()" class="drawerContentButton"></Button>
+          </StackLayout>
+      </ScrollView>
     </RadSideDrawer>
   </Page>
   `,

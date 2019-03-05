@@ -12,11 +12,11 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadSideDrawer ref="drawer" :drawerLocation="currentLocation">
-      <StackLayout ~drawerContent class="sideStackLayout">
+      <GridLayout ~drawerContent rows="auto, *" class="sideStackLayout">
           <StackLayout class="sideTitleStackLayout">
               <Label text="Navigation Menu"></Label>
           </StackLayout>
-          <ScrollView>
+          <ScrollView row="1">
               <StackLayout class="sideStackLayout">
                   <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
                   <Label text="Social" class="sideLabel"></Label>
@@ -29,19 +29,17 @@ export default {
                   <Button text="Close Drawer" @tap="onCloseDrawerTap()"></Button>
               </StackLayout>
           </ScrollView>
-      </StackLayout>
-      <StackLayout ~mainContent class="mainContent">
-          <ScrollView>
-              <StackLayout>
-                  <Label text="SideDrawer for NativeScript is shown from the left side of the app window by default.You can change this behavior by setting the drawerLocation property to Left, Top, Right or Bottom."
-              textWrap="true" class="drawerContentText"></Label>
-                  <Button text="Left" @tap="onLeftLocationTap()" class="drawerContentButton"></Button>
-                  <Button text="Top" @tap="onTopLocationTap()" class="drawerContentButton"></Button>
-                  <Button text="Right" @tap="onRightLocationTap()" class="drawerContentButton"></Button>
-                  <Button text="Bottom" @tap="onBottomLocationTap()" class="drawerContentButton"></Button>
-              </StackLayout>
-          </ScrollView>
-      </StackLayout>
+      </GridLayout>
+        <ScrollView ~mainContent class="mainContent">
+            <StackLayout>
+                <Label text="SideDrawer for NativeScript is shown from the left side of the app window by default.You can change this behavior by setting the drawerLocation property to Left, Top, Right or Bottom."
+            textWrap="true" class="drawerContentText"></Label>
+                <Button text="Left" @tap="onLeftLocationTap()" class="drawerContentButton"></Button>
+                <Button text="Top" @tap="onTopLocationTap()" class="drawerContentButton"></Button>
+                <Button text="Right" @tap="onRightLocationTap()" class="drawerContentButton"></Button>
+                <Button text="Bottom" @tap="onBottomLocationTap()" class="drawerContentButton"></Button>
+            </StackLayout>
+        </ScrollView>
     </RadSideDrawer>
   </Page>
   `,
