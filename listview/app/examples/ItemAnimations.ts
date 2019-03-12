@@ -1,7 +1,7 @@
 import { getItemList } from "../data";
 import * as frameModule from "tns-core-modules/ui/frame";
 import { ObservableArray } from "tns-core-modules/data/observable-array/observable-array";
-import { ListViewEventData } from "nativescript-ui-listview";
+import { ListViewEventData, ListViewItemAnimation } from "nativescript-ui-listview";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 
 const description = "Item Animations";
@@ -100,7 +100,12 @@ export default {
         .action({
           message: "Animation",
           cancelButtonText: "Cancel",
-          actions: ["Default", "Fade", "Scale", "Slide"]
+          actions: [
+            ListViewItemAnimation.Default,
+            ListViewItemAnimation.Fade,
+            ListViewItemAnimation.Scale,
+            ListViewItemAnimation.Slide
+          ]
         })
         .then(result => {
           this.itemInsertAnimation = result;
