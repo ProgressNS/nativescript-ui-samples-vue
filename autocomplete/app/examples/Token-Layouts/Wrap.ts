@@ -1,6 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
-import { LayoutMode, TokenModel } from 'nativescript-ui-autocomplete';
+import { AutoCompleteLayoutMode, TokenModel } from 'nativescript-ui-autocomplete';
 import { getCountriesCount, getCountry } from '../data';
 
 const description = 'Wrap';
@@ -45,7 +45,7 @@ export default {
     return {
       title: description,
       dataItems: dataItems,
-      layoutMode: LayoutMode.Wrap,
+      layoutMode: AutoCompleteLayoutMode.Wrap,
     };
   },
   methods: {

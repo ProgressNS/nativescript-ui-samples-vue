@@ -1,6 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
-import { LayoutMode, TokenModel } from 'nativescript-ui-autocomplete';
+import { AutoCompleteLayoutMode, TokenModel } from 'nativescript-ui-autocomplete';
 import { getCountriesCount, getCountry } from '../data';
 
 const description = 'Switch at runtime';
@@ -55,7 +55,7 @@ export default {
     return {
       title: description,
       dataItems: dataItems,
-      layoutMode: LayoutMode.Wrap,
+      layoutMode: AutoCompleteLayoutMode.Wrap,
     };
   },
   methods: {
@@ -63,10 +63,10 @@ export default {
       frameModule.topmost().goBack();
     },
     onHorizontalSelected(args) {
-      this.layoutMode = LayoutMode.Horizontal;
+      this.layoutMode = AutoCompleteLayoutMode.Horizontal;
     },
     onWrapSelected(args) {
-      this.layoutMode = LayoutMode.Wrap;
+      this.layoutMode = AutoCompleteLayoutMode.Wrap;
     },
     onAddToken() {
       if (this.dataItems.length <= this.lastIndex) {

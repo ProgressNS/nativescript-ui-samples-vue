@@ -29,7 +29,7 @@ export default {
         <SuggestionView ~suggestionView suggestionViewHeight="300">
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
-              <StackLayout orientation="horizontal">
+              <StackLayout orientation="vertical">
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>

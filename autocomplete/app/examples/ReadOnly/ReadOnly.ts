@@ -13,24 +13,8 @@ export default {
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
-      <Label text="Select country"></Label>
-      <RadAutoCompleteTextView ref="autocomplete"
-                               suggestMode="Suggest"
-                               displayMode="Plain"
-                               :readOnly="readOnly"
-                               :items="dataItems">
-        <SuggestionView ~suggestionView suggestionViewHeight="300">
-          <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
-            <v-template>
-              <StackLayout orientation="horizontal">
-                <Image :src="item.image" width="50"></Image>
-                <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
-              </StackLayout>
-            </v-template>
-          </StackLayout>
-        </SuggestionView>
-      </RadAutoCompleteTextView>
+    <StackLayout ios:backgroundColor="#CDCECE" padding="5">
+      <Label text="Select country (tokens mode)"></Label>
       <RadAutoCompleteTextView ref="autocomplete"
                                suggestMode="Suggest"
                                displayMode="Tokens"
@@ -40,7 +24,22 @@ export default {
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
               <StackLayout orientation="horizontal">
-                <Image :src="item.image" width="50"></Image>
+                <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
+              </StackLayout>
+            </v-template>
+          </StackLayout>
+        </SuggestionView>
+      </RadAutoCompleteTextView>
+      <Label text="Select country (plain mode)"></Label>
+      <RadAutoCompleteTextView ref="autocomplete"
+                               suggestMode="Suggest"
+                               displayMode="Plain"
+                               :readOnly="readOnly"
+                               :items="dataItems">
+        <SuggestionView ~suggestionView suggestionViewHeight="300">
+          <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
+            <v-template>
+              <StackLayout orientation="vertical">
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>

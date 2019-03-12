@@ -1,6 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
-import { CompletionMode, DisplayMode, SuggestMode } from 'nativescript-ui-autocomplete';
+import { AutoCompleteCompletionMode, AutoCompleteDisplayMode, AutoCompleteSuggestMode } from 'nativescript-ui-autocomplete';
 import { getCountry, getCountriesCount, getCountryWithImage } from '../data';
 
 const description = 'Hint';
@@ -21,7 +21,7 @@ export default {
         <SuggestionView ~suggestionView suggestionViewHeight="300">
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
-              <StackLayout orientation="horizontal">
+              <StackLayout orientation="vertical">
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>
@@ -40,9 +40,9 @@ export default {
     return {
       title: description,
       dataItems: dataItems,
-      displayMode: DisplayMode.Tokens,
-      suggestMode: SuggestMode.Suggest,
-      completionMode: CompletionMode.StartsWith,
+      displayMode: AutoCompleteDisplayMode.Tokens,
+      suggestMode: AutoCompleteSuggestMode.Suggest,
+      completionMode: AutoCompleteCompletionMode.StartsWith,
     };
   },
   methods: {
@@ -50,32 +50,32 @@ export default {
       frameModule.topmost().goBack();
     },
     onSuggestSelected(args) {
-      this.suggestMode = SuggestMode.Suggest;
-      this.$refs.autocomplete.resetAutocomplete();
+      this.suggestMode = AutoCompleteSuggestMode.Suggest;
+      this.$refs.autocomplete.resetAutoComplete();
     },
     onAppendSelected(args) {
-      this.suggestMode = SuggestMode.Append;
-      this.$refs.autocomplete.resetAutocomplete();
+      this.suggestMode = AutoCompleteSuggestMode.Append;
+      this.$refs.autocomplete.resetAutoComplete();
     },
     onSuggestAppendSelected(args) {
-      this.suggestMode = SuggestMode.SuggestAppend;
-      this.$refs.autocomplete.resetAutocomplete();
+      this.suggestMode = AutoCompleteSuggestMode.SuggestAppend;
+      this.$refs.autocomplete.resetAutoComplete();
     },
     onStartsWithSelected(args) {
-      this.completionMode = CompletionMode.StartsWith;
-      this.$refs.autocomplete.resetAutocomplete();
+      this.completionMode = AutoCompleteCompletionMode.StartsWith;
+      this.$refs.autocomplete.resetAutoComplete();
     },
     onContainsSelected(args) {
-      this.completionMode = CompletionMode.Contains;
-      this.$refs.autocomplete.resetAutocomplete();
+      this.completionMode = AutoCompleteCompletionMode.Contains;
+      this.$refs.autocomplete.resetAutoComplete();
     },
     onPlainSelected(args) {
-      this.displayMode = DisplayMode.Plain;
-      this.$refs.autocomplete.resetAutocomplete();
+      this.displayMode = AutoCompleteDisplayMode.Plain;
+      this.$refs.autocomplete.resetAutoComplete();
     },
     onTokensSelected(args) {
-      this.displayMode = DisplayMode.Tokens;
-      this.$refs.autocomplete.resetAutocomplete();
+      this.displayMode = AutoCompleteDisplayMode.Tokens;
+      this.$refs.autocomplete.resetAutoComplete();
     },
   },
 };
