@@ -1,6 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
-import { LayoutMode, TokenModel } from 'nativescript-ui-autocomplete';
+import { AutoCompleteLayoutMode, TokenModel } from 'nativescript-ui-autocomplete';
 import { getCountriesCount, getCountry } from '../data';
 
 const description = 'Horizontal';
@@ -23,7 +23,7 @@ export default {
         <SuggestionView ~suggestionView suggestionViewHeight="300">
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
-              <StackLayout orientation="horizontal">
+              <StackLayout orientation="vertical">
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>
@@ -46,7 +46,7 @@ export default {
     return {
       title: description,
       dataItems: dataItems,
-      layoutMode: LayoutMode.Horizontal,
+      layoutMode: AutoCompleteLayoutMode.Horizontal,
     };
   },
   methods: {

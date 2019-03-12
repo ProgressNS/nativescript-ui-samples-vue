@@ -1,6 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
-import { CompletionMode, DisplayMode, SuggestMode } from 'nativescript-ui-autocomplete';
+import { AutoCompleteDisplayMode, AutoCompleteCompletionMode } from 'nativescript-ui-autocomplete';
 import { getCountry, getCountriesCount } from '../data';
 import DisplayModes from '~/examples/Display-modes/Display-modes';
 
@@ -22,7 +22,7 @@ export default {
         <SuggestionView ~suggestionView suggestionViewHeight="300">
           <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
             <v-template>
-              <StackLayout orientation="horizontal">
+              <StackLayout orientation="vertical">
                 <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
               </StackLayout>
             </v-template>
@@ -41,8 +41,8 @@ export default {
     return {
       title: description,
       dataItems: dataItems,
-      completionMode: CompletionMode.Contains,
-      displayMode: DisplayMode.Plain
+      completionMode: AutoCompleteCompletionMode.Contains,
+      displayMode: AutoCompleteDisplayMode.Plain
     };
   },
   methods: {

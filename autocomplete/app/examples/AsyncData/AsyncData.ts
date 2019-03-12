@@ -13,7 +13,7 @@ export default {
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
+    <StackLayout ios:backgroundColor="#CDCECE" padding="5">
       <Label text="Select airport"></Label>
       <RadAutoCompleteTextView ref="autocomplete"
                                displayMode="plain"
