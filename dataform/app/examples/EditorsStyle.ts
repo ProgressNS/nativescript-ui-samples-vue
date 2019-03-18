@@ -1,6 +1,7 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { PersonBase } from '../data';
-import { FontStyles } from "nativescript-ui-dataform";
+import { DataFormFontStyle } from "nativescript-ui-dataform";
+import { Color } from 'tns-core-modules/color';
 
 const description = 'Editors styles';
 
@@ -49,9 +50,9 @@ export default {
       frameModule.topmost().goBack();
     },
     onChangeStyles() {
-      this._nameEditor.propertyEditorStyle.labelFontStyle = FontStyles.BoldItalic;
-      this._ageEditor.propertyEditorStyle.labelFontStyle = FontStyles.BoldItalic;
-      this._birthDateEditor.propertyEditorStyle.labelFontStyle = FontStyles.BoldItalic;
+      this._nameEditor.propertyEditorStyle.labelFontStyle = DataFormFontStyle.BoldItalic;
+      this._ageEditor.propertyEditorStyle.labelFontStyle = DataFormFontStyle.BoldItalic;
+      this._birthDateEditor.propertyEditorStyle.labelFontStyle = DataFormFontStyle.BoldItalic;
 
       this._nameEditor.propertyEditorStyle.labelFontName = "Times New Roman";
       this._ageEditor.propertyEditorStyle.labelFontName = "Times New Roman";
@@ -61,9 +62,9 @@ export default {
       this._ageEditor.propertyEditorStyle.labelTextSize = 20;
       this._birthDateEditor.propertyEditorStyle.labelTextSize = 20;
 
-      this._nameEditor.propertyEditorStyle.labelTextColor = "orange";
-      this._ageEditor.propertyEditorStyle.labelTextColor = "purple";
-      this._birthDateEditor.propertyEditorStyle.labelTextColor = "lime";
+      this._nameEditor.propertyEditorStyle.labelTextColor = new Color("orange");
+      this._ageEditor.propertyEditorStyle.labelTextColor = new Color("purple");
+      this._birthDateEditor.propertyEditorStyle.labelTextColor = new Color("lime");
     }
   },
   mounted() {

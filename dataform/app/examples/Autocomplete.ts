@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { AutoCompleteDisplayMode } from 'nativescript-ui-dataform';
+import { AutoCompleteDisplayMode, DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
 import { Booking } from '../data';
 
 const data = require('../airports.json');
@@ -29,15 +29,15 @@ export default {
       booking: new Booking(),
       bookingMetadata: {
         'isReadOnly': false,
-        'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'commitMode': DataFormCommitMode.Immediate,
+        'validationMode': DataFormValidationMode.Immediate,
         'propertyAnnotations':
         [
           {
             'name': 'from',
             'displayName': 'From:',
             'index': 0,
-            'editor': 'AutoCompleteInline',
+            'editor': DataFormEditorType.AutoCompleteInline,
             'editorParams': {
               'autoCompleteDisplayMode': AutoCompleteDisplayMode.Tokens
             },
@@ -47,7 +47,7 @@ export default {
             'name': 'to',
             'displayName': 'To:',
             'index': 1,
-            'editor': 'AutoCompleteInline',
+            'editor': DataFormEditorType.AutoCompleteInline,
             'editorParams': {
               'autoCompleteDisplayMode': AutoCompleteDisplayMode.Plain
             },

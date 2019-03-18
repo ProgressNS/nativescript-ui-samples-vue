@@ -1,6 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { Person } from '../data';
-import { FontStyles } from "nativescript-ui-dataform";
 
 const description = 'Groups';
 

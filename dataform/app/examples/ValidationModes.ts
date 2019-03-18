@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { ValidationMode } from 'nativescript-ui-dataform';
+import { DataFormValidationMode } from 'nativescript-ui-dataform';
 import { BaseUser } from '../data';
 
 const description = 'Validation Modes';
@@ -39,7 +39,7 @@ export default {
     return {
       title: description,
       text: '',
-      validationMode: ValidationMode.Immediate,
+      validationMode: DataFormValidationMode.Immediate,
       person: new BaseUser(),
       segmentedBarItems: (function() {
         const segmentedBarModule = require(
@@ -104,13 +104,13 @@ export default {
       frameModule.topmost().goBack();
     },
     onImmediateTap() {
-      this.validationMode = ValidationMode.Immediate;
+      this.validationMode = DataFormValidationMode.Immediate;
     },
     onOnLostFocusTap() {
-      this.validationMode = ValidationMode.OnLostFocus;
+      this.validationMode = DataFormValidationMode.OnLostFocus;
     },
     onManualTap() {
-      this.validationMode = ValidationMode.Manual;
+      this.validationMode = DataFormValidationMode.Manual;
     },
     onValidateTap() {
       this.$refs.dataform.validateAll()
@@ -124,13 +124,13 @@ export default {
     onSelectedIndexChanged() {
       switch (this.selectedBarIndex) {
           case 0:
-              this.validationMode = ValidationMode.Immediate;
+              this.validationMode = DataFormValidationMode.Immediate;
               break;
           case 1:
-              this.validationMode = ValidationMode.OnLostFocus;
+              this.validationMode = DataFormValidationMode.OnLostFocus;
               break;
           case 2:
-              this.validationMode = ValidationMode.Manual;
+              this.validationMode = DataFormValidationMode.Manual;
               break;
       }
     }

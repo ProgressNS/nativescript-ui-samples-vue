@@ -1,5 +1,4 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { ValidationMode } from 'nativescript-ui-dataform';
 import { BaseUser } from '../data';
 
 const description = 'Validation Events';
