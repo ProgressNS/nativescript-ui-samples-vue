@@ -1,5 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { getFirstSeries, getSecondSeries, getThirdSeries } from '../../data';
+import { ChartSeriesStackMode } from "nativescript-ui-chart";
 
 const description = 'Stacked Area Series';
 
@@ -41,7 +42,7 @@ export default {
   data () {
     return {
       title: description,
-      stackMode: 'Stack',
+      stackMode: ChartSeriesStackMode.Stack,
       firstSeries: getFirstSeries(),
       secondSeries: getSecondSeries(),
       thirdSeries: getThirdSeries()
@@ -52,13 +53,13 @@ export default {
       frameModule.topmost().goBack();
     },
     onStack100ModeSelected () {
-      this.stackMode = 'Stack100';
+      this.stackMode = ChartSeriesStackMode.Stack100;
     },
     onStackModeSelected () {
-      this.stackMode = 'Stack';
+      this.stackMode = ChartSeriesStackMode.Stack;
     },
     onNoneStackModeSelected () {
-      this.stackMode = 'None';
+      this.stackMode = ChartSeriesStackMode.None;
     }
   }
 };

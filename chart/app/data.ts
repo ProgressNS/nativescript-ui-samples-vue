@@ -117,7 +117,7 @@ export const getScatterData = () => {
   ]);
 };
 
-export const getFinantialData = () => {
+export const getFinancialData = () => {
   return new ObservableArray([
     { Date: '01/6/2015', Open: 100, Close: 85, Low: 50, High: 139 },
     { Date: '27/7/2015', Open: 60, Close: 150, Low: 40, High: 159 },
