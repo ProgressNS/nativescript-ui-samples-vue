@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { LinearAxis } from 'nativescript-ui-chart';
+import { LinearAxis, ChartAxisHorizontalLocation } from 'nativescript-ui-chart';
 import { getCountriesData } from '../../data';
 
 const description = 'Pan & Zoom';
@@ -38,11 +38,11 @@ export default {
   `,
   data () {
     let linearAxisZoom = new LinearAxis();
-    linearAxisZoom.horizontalLocation = 'Left';
+    linearAxisZoom.horizontalLocation = ChartAxisHorizontalLocation.Left;
     linearAxisZoom.allowZoom = true;
 
     let linearAxisZoomPan = new LinearAxis();
-    linearAxisZoomPan.horizontalLocation = "Right";
+    linearAxisZoomPan.horizontalLocation = ChartAxisHorizontalLocation.Right;
     linearAxisZoomPan.allowZoom = true;
     linearAxisZoomPan.allowPan = true;
 

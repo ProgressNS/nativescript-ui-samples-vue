@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { getFinantialData } from '../../data';
+import { getFinancialData } from '../../data';
 
 const description = 'Ohlc Series';
 
@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       title: description,
-      items: getFinantialData(),
+      items: getFinancialData(),
     };
   },
   methods: {

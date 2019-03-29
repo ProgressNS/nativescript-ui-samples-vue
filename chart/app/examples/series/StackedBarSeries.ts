@@ -1,5 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { getCountriesData } from '../../data';
+import { ChartSeriesStackMode } from "nativescript-ui-chart";
 
 const description = 'Stacked Bar Series';
 
@@ -28,7 +29,7 @@ export default {
     return {
       title: description,
       items: getCountriesData(),
-      stackMode: 'Stack',
+      stackMode: ChartSeriesStackMode.Stack,
     };
   },
   methods: {
@@ -36,13 +37,13 @@ export default {
       frameModule.topmost().goBack();
     },
     onStack100ModeSelected () {
-      this.stackMode = 'Stack100';
+      this.stackMode = ChartSeriesStackMode.Stack100;
     },
     onStackModeSelected () {
-      this.stackMode = 'Stack';
+      this.stackMode = ChartSeriesStackMode.Stack;
     },
     onNoneStackModeSelected () {
-      this.stackMode = 'None';
+      this.stackMode = ChartSeriesStackMode.None;
     },
   }
 };
