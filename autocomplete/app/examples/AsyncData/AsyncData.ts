@@ -4,7 +4,7 @@ import { TokenModel } from 'nativescript-ui-autocomplete';
 import * as http from 'tns-core-modules/http';
 
 const description = 'Async Data Fetch';
-
+// >> autocomplete-asyncdata-vue
 export default {
   name: 'AsyncData',
   description: description,
@@ -65,3 +65,4 @@ export default {
     });
   },
 };
+// << autocomplete-asyncdata-vue

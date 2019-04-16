@@ -1,5 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
+// >> autocomplete-suggest-mode-vue
 import { AutoCompleteSuggestMode } from 'nativescript-ui-autocomplete';
 import { getCountry, getCountriesCount } from '../data';
 
@@ -49,3 +50,4 @@ export default {
     }
   }
 };
+// << autocomplete-suggest-mode-vue
