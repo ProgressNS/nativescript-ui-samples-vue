@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> dataform-editor-vue
 import { TicketOrder, getMovies, Movie, MovieConverter } from '../data';
 
 const description = 'Editors';
@@ -107,3 +108,4 @@ export default {
     },
   }
 };
+// << dataform-editor-vue

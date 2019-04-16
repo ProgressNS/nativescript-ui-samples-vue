@@ -103,7 +103,7 @@ export class TicketOrder {
   constructor() {
   }
 }
-
+// >> dataform-data-converter-vue
 export class Movie {
   public id: number;
   public name: string;
@@ -133,7 +133,7 @@ export const getMovies = () => {
   movies.push(new Movie(324, 'The Jungle Book'));
   return movies;
 };
-
+// << dataform-data-converter-vue
 export class Booking {
   // Next line would raise an error because a core issue
   // See https://github.com/telerik/nativescript-ui-feedback/issues/921

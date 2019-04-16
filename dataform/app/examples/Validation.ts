@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> dataform-validation-vue
 import { RegisteringUser } from '../data';
 
 const description = 'Validation';
@@ -176,3 +177,4 @@ export default {
     }
   }
 };
+// << dataform-validation-vue
