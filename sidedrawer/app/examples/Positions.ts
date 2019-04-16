@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> sidedrawer-positions-vue
 import { SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 
 const description = 'Position';
@@ -83,3 +84,4 @@ export default {
   },
 };
 
+// << sidedrawer-positions-vue

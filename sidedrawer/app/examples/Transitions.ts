@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> sidedrawer-transitions-vue
 import {
   PushTransition,
   FadeTransition,
@@ -108,3 +109,4 @@ export default {
   },
 };
 
+// << sidedrawer-transitions-vue

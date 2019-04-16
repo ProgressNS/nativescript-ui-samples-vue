@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> sidedrawer-events-vue
 import { DrawerTransitionBase } from 'nativescript-ui-sidedrawer';
 
 const description = 'Events';
@@ -76,3 +77,5 @@ export default {
     },
   },
 };
+
+// << sidedrawer-events-vue
