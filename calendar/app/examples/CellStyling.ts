@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> calendar-cellstyling-vue
 import { Color } from "tns-core-modules/color";
 import {
   AllDayEventsViewStyle,
@@ -449,3 +450,4 @@ export default {
     };
   }
 };
+// << calendar-cellstyling-vue

@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> calendar-selectionmode-vue
 import { CalendarSelectionMode } from 'nativescript-ui-calendar';
 
 const description = 'Selection modes';
@@ -48,3 +49,4 @@ export default {
     },
   },
 };
+// << calendar-selectionmode-vue
