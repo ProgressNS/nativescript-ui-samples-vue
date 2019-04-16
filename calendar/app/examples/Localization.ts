@@ -1,7 +1,7 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 
 const description = 'Localization';
-
+// >> calendar-localization-vue
 export default {
   name: 'Localization',
   description: description,
@@ -37,3 +37,4 @@ export default {
     },
   }
 };
+// << calendar-localization-vue

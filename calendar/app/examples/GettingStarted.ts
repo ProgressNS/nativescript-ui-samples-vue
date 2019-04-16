@@ -1,7 +1,7 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 
 const description = 'Getting Started';
-
+// >> calendar-gettingstarted-vue
 export default {
   name: 'GettingStarted',
   description: description,
@@ -24,3 +24,4 @@ export default {
     };
   },
 };
+// << calendar-gettingstarted-vue

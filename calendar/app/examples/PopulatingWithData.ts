@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> calendar-populate-vue
 import { getEvents } from '../data';
 
 const description = 'Populating with data';
@@ -43,3 +44,4 @@ export default {
     },
   },
 };
+// << calendar-populate-vue

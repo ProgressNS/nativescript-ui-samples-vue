@@ -1,3 +1,4 @@
+// >> calendar-populate-data-vue
 import { Color } from 'tns-core-modules/color';
 import { CalendarEvent } from 'nativescript-ui-calendar';
 
@@ -75,3 +76,4 @@ export function getCalendarDayEvents(): Array<CalendarEvent> {
 
   return events;
 }
+// << calendar-populate-data-vue

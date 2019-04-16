@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> calendar-events-view-modes-vue
 import { CalendarEventsViewMode } from 'nativescript-ui-calendar';
 import { getEvents } from '../data';
 
@@ -47,3 +48,4 @@ export default {
     },
   },
 };
+// << calendar-events-view-modes-vue
