@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> gauge-style-vue
 import {
   TitleStyle,
   SubtitleStyle,
@@ -154,3 +155,4 @@ export default {
     },
   },
 };
+// << gauge-style-vue
