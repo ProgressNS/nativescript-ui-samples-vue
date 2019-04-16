@@ -1,5 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
+// >> autocomplete-gettingstarted-vue
 import { AutoCompleteCompletionMode, AutoCompleteDisplayMode, AutoCompleteSuggestMode } from 'nativescript-ui-autocomplete';
 import { getCountry, getCountriesCount, getCountryWithImage } from '../data';
 
@@ -100,3 +101,4 @@ export default {
     },
   },
 };
+// << autocomplete-gettingstarted-vue

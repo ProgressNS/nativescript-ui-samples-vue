@@ -3,7 +3,7 @@ import Contains from './Contains';
 import StartsWith from './Starts-with';
 
 const description = 'Completion modes';
-
+// >> autocomplete-completionmode-vue
 export default {
   name: 'Completion modes',
   description: description,
@@ -42,3 +42,4 @@ export default {
     },
   },
 };
+// << autocomplete-completionmode-vue
