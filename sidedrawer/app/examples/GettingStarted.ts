@@ -1,7 +1,7 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 
 const description = 'Getting Started';
-
+// >> sidedrawer-getting-started-vue
 export default {
   name: 'GettingStarted',
   description: description,
@@ -61,3 +61,5 @@ related to changes in its state. Swipe from left to open side drawer.',
     },
   },
 };
+
+// << sidedrawer-getting-started-vue
