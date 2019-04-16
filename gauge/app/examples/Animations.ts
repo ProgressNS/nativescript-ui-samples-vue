@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-
+// >> gauge-animations-vue
 const description = 'Animations';
 
 export default {
@@ -59,3 +59,4 @@ export default {
     }
   },
 };
+// << gauge-animations-vue

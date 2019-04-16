@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-
+// >> gauge-scales-vue
 const description = 'Scales';
 
 export default {
@@ -48,3 +48,4 @@ export default {
     },
   },
 };
+// << gauge-scales-vue

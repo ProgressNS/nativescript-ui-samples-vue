@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-
+// >> gauge-gettingstarted-vue
 const description = 'Getting Started';
 
 export default {
@@ -45,3 +45,4 @@ export default {
     },
   },
 };
+// << gauge-gettingstarted-vue

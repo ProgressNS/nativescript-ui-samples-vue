@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> gauge-customization-vue
 import { RadialScale, RadialBarIndicator } from "nativescript-ui-gauge";
 
 const description = 'Customization';
@@ -64,3 +65,4 @@ export default {
     }
   },
 };
+// << gauge-customization-vue
