@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> dataform-vmodes-vue
 import { DataFormValidationMode } from 'nativescript-ui-dataform';
 import { BaseUser } from '../data';
 
@@ -136,3 +137,4 @@ export default {
     }
   }
 };
+// << dataform-vmodes-vue

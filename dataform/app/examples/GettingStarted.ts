@@ -1,5 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-
+// >> dataform-getting-started-vue
 const description = 'Getting Started';
 
 export default {
@@ -33,3 +33,4 @@ export default {
     },
   }
 };
+// << dataform-getting-started-vue

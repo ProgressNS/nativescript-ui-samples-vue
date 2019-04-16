@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> dataform-autocomplete-vue
 import { AutoCompleteDisplayMode, DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
 import { Booking } from '../data';
 
@@ -63,3 +64,4 @@ export default {
     },
   },
 };
+// << dataform-autocomplete-vue

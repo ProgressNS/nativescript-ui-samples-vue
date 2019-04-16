@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> dataform-vevent-vue
 import { BaseUser } from '../data';
 
 const description = 'Validation Events';
@@ -120,3 +121,4 @@ export default {
     },
   }
 };
+// << dataform-vevent-vue
