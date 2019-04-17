@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-seriesselection-vue
 import { getCountriesData, getBubbleCategoricalData } from '../../data';
 
 const description = 'Series Selection';
@@ -12,26 +13,15 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <LinearAxis v-tkCartesianVerticalAxis horizontalLocation="Right" allowPan="true"></LinearAxis>
-      <CategoricalAxis v-tkCartesianHorizontalAxis allowPan="true" allowZoom="true"></CategoricalAxis>
+      <LinearAxis v-tkCartesianVerticalAxis horizontalLocation="Right"></LinearAxis>
+      <CategoricalAxis v-tkCartesianHorizontalAxis></CategoricalAxis>
 
-      <BarSeries v-tkCartesianSeries
-                 selectionMode="Series"
-                 seriesName="Bar"
-                 stackMode="Stack"
-                 categoryProperty="Country"
-                 valueProperty="Impact"
-                 :items="bubbleItems">
+      <BarSeries v-tkCartesianSeries selectionMode="Series"
+        :items="bubbleItems" categoryProperty="Country" valueProperty="Impact">
       </BarSeries>
 
-      <LineSeries v-tkCartesianSeries
-                 selectionMode="Series"
-                 showLabels="true"
-                 seriesName="Line"
-                 categoryProperty="Country"
-                 valueProperty="Amount"
-                 stackMode="Stack"
-                 :items="items">
+      <LineSeries v-tkCartesianSeries selectionMode="Series" showLabels="true"
+        :items="items" categoryProperty="Country" valueProperty="Amount">
       </LineSeries>
     </RadCartesianChart>
   </Page>
@@ -49,3 +39,4 @@ export default {
     },
   },
 };
+// << chart-seriesselection-vue

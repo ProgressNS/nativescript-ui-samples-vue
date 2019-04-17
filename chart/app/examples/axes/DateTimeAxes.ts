@@ -1,7 +1,8 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-datetimecontinuous-vue
 import { getDateTimeData } from '../../data';
 
-const description = 'DateTime axes';
+const description = 'DateTime Axis';
 
 export default {
   name: 'DateTimeAxes',
@@ -13,21 +14,13 @@ export default {
     </ActionBar>
     <RadCartesianChart>
       <DateTimeContinuousAxis v-tkCartesianHorizontalAxis
-                              minimum="01/02/2015"
-                              maximum="01/10/2015"
-                              majorStep="Month"
-                              dateFormat="MMM-dd"
-                              labelFitMode="Rotate"
-                              labelRotationAngle="1.2">
+        minimum="01/02/2015" maximum="01/10/2015"
+        majorStep="Month" dateFormat="MMM-dd"
+        labelFitMode="Rotate" labelRotationAngle="1.2">
       </DateTimeContinuousAxis>
-
       <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
-      <LineSeries v-tkCartesianSeries
-                  categoryProperty="TimeStamp"
-                  valueProperty="Amount"
-                  :items="items">
-      </LineSeries>
 
+      <LineSeries v-tkCartesianSeries :items="items" categoryProperty="TimeStamp" valueProperty="Amount"></LineSeries>
     </RadCartesianChart>
   </Page>
   `,
@@ -43,3 +36,4 @@ export default {
     },
   },
 };
+// << chart-datetimecontinuous-vue

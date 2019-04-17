@@ -18,6 +18,22 @@ export default {
         <CategoricalAxis v-tkCartesianHorizontalAxis></CategoricalAxis>
         <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
 
+        <SplineSeries v-tkCartesianSeries legendTitle="Bangkok" seriesName="Line1"
+          :items="items" categoryProperty="Month" valueProperty="Bangkok">
+        </SplineSeries>
+        <SplineSeries v-tkCartesianSeries legendTitle="Paris" seriesName="Line2"
+          :items="items" categoryProperty="Month" valueProperty="Paris">
+        </SplineSeries>
+        <SplineSeries v-tkCartesianSeries legendTitle="Ulaanbaatar" seriesName="Line3"
+          :items="items" categoryProperty="Month" valueProperty="Ulaanbaatar">
+        </SplineSeries>
+
+        <Trackball v-tkCartesianTrackball snapMode="AllClosestPoints" showIntersectionPoints="true"
+          @trackBallContentRequested="onTrackBallContentRequested">
+        </Trackball>
+
+        <RadLegendView v-tkCartesianLegend position="Top" title="Monthly Averages"></RadLegendView>
+
         <Palette v-tkCartesianPalette seriesName="Line1">
           <PaletteEntry v-tkCartesianPaletteEntry fillColor="#E11B01" strokeColor="#E11B01"></PaletteEntry>
         </Palette>
@@ -27,38 +43,6 @@ export default {
         <Palette v-tkCartesianPalette seriesName="Line3">
           <PaletteEntry v-tkCartesianPaletteEntry fillColor="#03A9F4" strokeColor="#03A9F4"></PaletteEntry>
         </Palette>
-
-        <SplineSeries v-tkCartesianSeries
-                      legendTitle="Bangkok"
-                      seriesName="Line1"
-                      :items="items"
-                      categoryProperty="Month"
-                      valueProperty="Bangkok">
-        </SplineSeries>
-        <SplineSeries v-tkCartesianSeries
-                      legendTitle="Paris"
-                      seriesName="Line2"
-                      :items="items"
-                      categoryProperty="Month"
-                      valueProperty="Paris">
-        </SplineSeries>
-        <SplineSeries v-tkCartesianSeries
-                      legendTitle="Ulaanbaatar"
-                      seriesName="Line3"
-                      :items="items"
-                      categoryProperty="Month"
-                      valueProperty="Ulaanbaatar">
-        </SplineSeries>
-
-        <Trackball v-tkCartesianTrackball
-                   snapMode="AllClosestPoints"
-                   showIntersectionPoints="true"
-                   @trackBallContentRequested="onTrackBallContentRequested">
-        </Trackball>
-
-        <RadLegendView v-tkCartesianLegend
-                       position="Top"
-                       title="Monthly Averages"></RadLegendView>
 
       </RadCartesianChart>
     </GridLayout>

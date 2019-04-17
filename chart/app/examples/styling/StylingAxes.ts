@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-styling-axes-vue
 import { getCountriesData } from '../../data';
 
 const description = 'Styling Axes';
@@ -12,13 +13,9 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <LinearAxis v-tkCartesianHorizontalAxis labelTextColor="Green"></LinearAxis>
+      <LinearAxis v-tkCartesianHorizontalAxis labelTextColor="Green" lineHidden="false" labelSize="10" lineThickness="3" lineColor="Green"></LinearAxis>
       <CategoricalAxis v-tkCartesianVerticalAxis labelTextColor="#cb4b16" labelSize="10" lineThickness="3" lineColor="Red"></CategoricalAxis>
-      <BarSeries v-tkCartesianSeries
-                  :items="items"
-                  categoryProperty="Country"
-                  valueProperty="Amount"
-                  :items="items" />
+      <BarSeries v-tkCartesianSeries :items="items" categoryProperty="Country" valueProperty="Amount"/>
     </RadCartesianChart>
   </Page>
   `,
@@ -34,3 +31,4 @@ export default {
     },
   },
 };
+// << chart-styling-axes-vue

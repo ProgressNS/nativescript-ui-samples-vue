@@ -13,12 +13,12 @@ export default {
     </ActionBar>
     <RadPieChart>
       <PieSeries v-tkPieSeries
-                  selectionMode="DataPoint"
-                  outerRadiusFactor="0.8"
-                  expandRadius="0.2"
-                  showLabels="true"
-                  valueProperty="Sales"
-                  :items="items">
+          selectionMode="DataPoint"
+          outerRadiusFactor="0.8"
+          expandRadius="0.2"
+          showLabels="true"
+          :items="items"
+          valueProperty="Sales">
           <PointLabelStyle v-tkPieLabelStyle margin="15"></PointLabelStyle>
       </PieSeries>
       <RadLegendView v-tkPieLegend position="Top" title="My pie data"></RadLegendView>

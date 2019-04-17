@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-getting-started-vue
 import { getCountriesData } from '../../data';
 
 const description = 'Line Series';
@@ -12,12 +13,12 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <LineSeries v-tkCartesianSeries
-                  categoryProperty="Country"
-                  valueProperty="Amount"
-                  :items="items" />
       <CategoricalAxis v-tkCartesianHorizontalAxis />
       <LinearAxis v-tkCartesianVerticalAxis />
+      <LineSeries v-tkCartesianSeries
+                  :items="items"
+                  categoryProperty="Country"
+                  valueProperty="Amount" />
     </RadCartesianChart>
   </Page>
   `,
@@ -33,3 +34,4 @@ export default {
     },
   },
 };
+// << chart-getting-started-vue

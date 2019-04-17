@@ -12,17 +12,13 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <BarSeries v-tkCartesianSeries
-                 selectionMode="DataPoint"
-                 seriesName="Bars"
-                 legendTitle="Bar series"
-                 valueProperty="Sales"
-                 categoryProperty="Name"
-                 :items="items">
+      <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
+      <CategoricalAxis v-tkCartesianHorizontalAxis></CategoricalAxis>
+
+      <BarSeries v-tkCartesianSeries legendTitle="Bar series" selectionMode="DataPoint"
+        :items="items" categoryProperty="Name" valueProperty="Sales">
       </BarSeries>
 
-      <LinearAxis v-tkCartesianVerticalAxis horizontalLocation="Left" labelTextColor="Green" labelSize="10" lineColor="Red" lineThickness="1"></LinearAxis>
-      <CategoricalAxis v-tkCartesianHorizontalAxis verticalLocation="Bottom" labelTextColor="Red" labelSize="10" lineColor="Red" lineThickness="1"></CategoricalAxis>
       <RadLegendView v-tkCartesianLegend position="Top" title="Financial data" height="150"></RadLegendView>
     </RadCartesianChart>
   </Page>

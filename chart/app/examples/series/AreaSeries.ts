@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-area-series-vue
 import { getCountriesData } from '../../data';
 
 const description = 'Area Series';
@@ -12,13 +13,12 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <AreaSeries v-tkCartesianSeries
-                  categoryProperty="Country"
-                  valueProperty="Amount"
-                  :items="items" />
-
       <CategoricalAxis v-tkCartesianHorizontalAxis />
       <LinearAxis v-tkCartesianVerticalAxis />
+      <AreaSeries v-tkCartesianSeries
+                  :items="items"
+                  categoryProperty="Country"
+                  valueProperty="Amount" />
     </RadCartesianChart>
   </Page>
   `,
@@ -34,3 +34,4 @@ export default {
     },
   },
 };
+// << chart-area-series-vue

@@ -1,5 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { getFinancialData } from '../../data';
+// >> chart-candlestick-vue
+import { getCandlestickData } from '../../data';
 
 const description = 'Candlestick Series';
 
@@ -12,22 +13,22 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <CandleStickSeries v-tkCartesianSeries
-                          categoryProperty="Date"
-                          openPropertyName="Open"
-                          closePropertyName="Close"
-                          highPropertyName="High"
-                          lowPropertyName="Low"
-                          :items="items" />
       <DateTimeCategoricalAxis v-tkCartesianHorizontalAxis dateFormat="yyyy-MM-dd" verticalLocation="Bottom"></DateTimeCategoricalAxis>
       <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
+      <CandleStickSeries v-tkCartesianSeries
+        categoryProperty="Date"
+        openPropertyName="Open"
+        highPropertyName="High"
+        lowPropertyName="Low"
+        closePropertyName="Close"
+        :items="items" />
     </RadCartesianChart>
   </Page>
   `,
   data () {
     return {
       title: description,
-      items: getFinancialData(),
+      items: getCandlestickData(),
     };
   },
   methods: {
@@ -36,3 +37,4 @@ export default {
     },
   },
 };
+// << chart-candlestick-vue

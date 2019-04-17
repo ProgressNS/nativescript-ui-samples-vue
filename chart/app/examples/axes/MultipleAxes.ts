@@ -13,37 +13,14 @@ export default {
     </ActionBar>
     <RadCartesianChart>
       <LinearAxis v-tkCartesianVerticalAxis horizontalLocation="Left"></LinearAxis>
-      <CategoricalAxis v-tkCartesianHorizontalAxis verticalLocation="Down"></CategoricalAxis>
+      <CategoricalAxis v-tkCartesianHorizontalAxis verticalLocation="Bottom"></CategoricalAxis>
 
-      <LineSeries v-tkCartesianSeries
-                  seriesName="RateA"
-                  stackMode="Stack"
-                  categoryProperty="Country"
-                  valueProperty="Amount"
-                  :items="rateA">
-      </LineSeries>
-      <LineSeries v-tkCartesianSeries
-                  seriesName="RateB"
-                  stackMode="Stack"
-                  categoryProperty="Country"
-                  valueProperty="Amount"
-                  :items="rateB">
-      </LineSeries>
-      <LineSeries v-tkCartesianSeries
-                  seriesName="RateC"
-                  stackMode="Stack"
-                  categoryProperty="Country"
-                  valueProperty="Amount"
-                  :items="rateC">
-      </LineSeries>
-      <BarSeries v-tkCartesianSeries
-                 seriesName="Total"
-                 stackMode="Stack"
-                 categoryProperty="Country"
-                 valueProperty="Amount"
-                 :items="total">
-          <LinearAxis v-tkBarVerticalAxis horizontalLocation="Right"></LinearAxis>
+      <BarSeries v-tkCartesianSeries :items="total" categoryProperty="Country" valueProperty="Amount">
+        <LinearAxis v-tkBarVerticalAxis horizontalLocation="Right"></LinearAxis>
       </BarSeries>
+      <LineSeries v-tkCartesianSeries :items="rateA" categoryProperty="Country" valueProperty="Amount"></LineSeries>
+      <LineSeries v-tkCartesianSeries :items="rateB" categoryProperty="Country" valueProperty="Amount"></LineSeries>
+      <LineSeries v-tkCartesianSeries :items="rateC" categoryProperty="Country" valueProperty="Amount"></LineSeries>
     </RadCartesianChart>
   </Page>
   `,

@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-range-bar-vue
 import { getRangeBarData } from '../../data';
 
 const description = 'Range Bar Series';
@@ -12,15 +13,14 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
+      <LinearAxis v-tkCartesianVerticalAxis horizontalLocation="Left" labelSize="11"/>
+      <CategoricalAxis v-tkCartesianHorizontalAxis verticalLocation="Bottom" labelSize="11"/>
       <RangeBarSeries v-tkCartesianSeries
-                      showLabels="true"
-                      legendTitle="Ranges"
-                      categoryProperty="Name"
-                      lowPropertyName="Low"
-                      highPropertyName="High"
-                      :items="items" />
-      <CategoricalAxis v-tkCartesianHorizontalAxis />
-      <LinearAxis v-tkCartesianVerticalAxis />
+        showLabels="true"
+        categoryProperty="Name"
+        lowPropertyName="Low"
+        highPropertyName="High"
+        :items="items"/>
     </RadCartesianChart>
   </Page>
   `,
@@ -36,3 +36,4 @@ export default {
     },
   },
 };
+// << chart-range-bar-vue

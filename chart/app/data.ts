@@ -1,3 +1,4 @@
+// >> chart-get-countries-data-vue
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 
 export const getCountriesData = () => {
@@ -9,7 +10,7 @@ export const getCountriesData = () => {
     { Country: 'USA', Amount: 18, SecondVal: 8, ThirdVal: 21, Impact: 0, Year: 0 }
   ]);
 };
-
+// << chart-get-countries-data-vue
 export const getCountriesData2 = () => {
   return new ObservableArray([
       { Country: 'Germany', Amount: 29, SecondVal: 14, ThirdVal: 24, Impact: 0, Year: 0 },
@@ -29,7 +30,7 @@ export const getCountriesData3 = () => {
       { Country: 'USA', Amount: 42, SecondVal: 8, ThirdVal: 21, Impact: 0, Year: 0 }
   ]);
 };
-
+// >> chart-get-range-bar-data-vue
 export const getRangeBarData = () => {
   return new ObservableArray([
     { Name: 'Groceries', High: 30, Low: 12, Sales: 0, Margin: 0 },
@@ -38,7 +39,7 @@ export const getRangeBarData = () => {
     { Name: 'Gardening', High: 50, Low: 29, Sales: 0, Margin: 0 }
   ]);
 };
-
+// << chart-get-range-bar-data-vue
 export const getFirstSeries = () => {
   return new ObservableArray([
     { Country: 'Germany', Amount: 320, SecondVal: 14, ThirdVal: 24, Impact: 0, Year: 0 },
@@ -68,7 +69,7 @@ export const getThirdSeries = () => {
     { Country: 'USA', Amount: 100, SecondVal: 8, ThirdVal: 21, Impact: 0, Year: 0 }
   ]);
 };
-
+// >> chart-bubble-data-vue
 export const getHighDataModel = () => {
   return new ObservableArray([
     { Year: 2000, Amount: 15, Impact: 1, Country: '', SecondVal: 0, ThirdVal: 0 },
@@ -101,7 +102,9 @@ export const getLowDataModel = () => {
     { Year: 135, Amount: 20, Impact: 1, Country: '', SecondVal: 0, ThirdVal: 0 },
   ]);
 };
+// << chart-bubble-data-vue
 
+// >> chart-get-scatter-data-vue
 export const getScatterData = () => {
   return new ObservableArray([
     { Age: 20, Salary: 10000, Spendings: 4500, Savings: 5500, Impact: 1 },
@@ -116,8 +119,9 @@ export const getScatterData = () => {
     { Age: 65, Salary: 20000, Spendings: 20500, Savings: 10, Impact: 9 }
   ]);
 };
-
-export const getFinancialData = () => {
+// << chart-get-scatter-data-vue
+// >> chart-get-financial-data
+export const getCandlestickData = () => {
   return new ObservableArray([
     { Date: '01/6/2015', Open: 100, Close: 85, Low: 50, High: 139 },
     { Date: '27/7/2015', Open: 60, Close: 150, Low: 40, High: 159 },
@@ -126,6 +130,16 @@ export const getFinancialData = () => {
   ]);
 };
 
+export const getOhlcData = () => {
+  return new ObservableArray([
+    { Date: "20/6/2015", Open: 100, Close: 85, Low: 50, High: 139 },
+    { Date: "02/7/2015", Open: 60, Close: 150, Low: 40, High: 159 },
+    { Date: "01/8/2015", Open: 120, Close: 81, Low: 45, High: 141 },
+    { Date: "01/9/2015", Open: 105, Close: 200, Low: 55, High: 250 }
+  ]);
+};
+// << chart-get-financial-data
+// >> chart-get-pie-data-vue
 export const getPieData = () => {
   return new ObservableArray([
       { Brand: 'Audi', Amount: 10 },
@@ -135,7 +149,7 @@ export const getPieData = () => {
       { Brand: 'Crysler', Amount: 40 }
   ]);
 };
-
+// << chart-get-pie-data-vue
 export const getSourceItems = () => {
   return new ObservableArray([
       { Name: 'Groceries', Sales: 25, Margin: 10, High: 0, Low: 0 },
@@ -225,7 +239,7 @@ export const getTotal = () => {
       { Country: "USA", Amount: 2, SecondVal: 8, ThirdVal: 0, Impact: 0, Year: 0 }
   ]);
 };
-
+// >> chart-negative-values-data-vue
 export const getNegativeValues = () => {
   return new ObservableArray([
       { Period: 1, Amount: 10 },
@@ -240,7 +254,9 @@ export const getNegativeValues = () => {
       { Period: 10, Amount: -50 }
   ]);
 };
+// << chart-negative-values-data-vue
 
+// >> chart-datetimecontinuous-data-vue
 export const getDateTimeData = () => {
   return new ObservableArray([
       { TimeStamp: new Date(2015, 1, 11).getTime(), Amount: 10 },
@@ -255,3 +271,4 @@ export const getDateTimeData = () => {
       { TimeStamp: new Date(2015, 10, 3).getTime(), Amount: 6 },
   ]);
 };
+// << chart-datetimecontinuous-data-vue

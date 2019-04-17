@@ -36,9 +36,9 @@ export default {
       title: description,
       examples: [
         PanZoom,
-        PieSelection,
         TrackballExample,
         TrackballContent,
+        PieSelection,
         SeriesSelection,
         DatapointSelection,
       ],

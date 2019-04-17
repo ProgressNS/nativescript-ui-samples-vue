@@ -2,7 +2,7 @@ import * as frameModule from 'tns-core-modules/ui/frame';
 import { getCountriesData } from '../../data';
 
 const description = 'Styling Labels';
-
+// >> chart-styling-vue
 export default {
   name: 'StylingLabels',
   description: description,
@@ -12,13 +12,12 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <CategoricalAxis v-tkCartesianHorizontalAxis verticalLocation="Bottom" labelSize="10" lineColor="Red" lineThickness="3"></CategoricalAxis>
-      <LinearAxis v-tkCartesianVerticalAxis horizontalLocation="Left" labelSize="10" lineColor="Red" lineThickness="3"></LinearAxis>
+      <CategoricalAxis v-tkCartesianHorizontalAxis></CategoricalAxis>
+      <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
 
       <LineSeries v-tkCartesianSeries
-                  legendTitle="Financial data"
+                  legendTitle="Previous Year Sales"
                   showLabels="true"
-                  seriesName="Bar"
                   valueProperty="Amount"
                   categoryProperty="Country"
                   :items="items">
@@ -26,9 +25,8 @@ export default {
       </LineSeries>
 
       <LineSeries v-tkCartesianSeries
-                  legendTitle="Financial data"
+                  legendTitle="Current Year Sales"
                   showLabels="true"
-                  seriesName="Bar"
                   valueProperty="SecondVal"
                   categoryProperty="Country"
                   :items="items">
@@ -51,3 +49,4 @@ export default {
     },
   },
 };
+// << chart-styling-vue
