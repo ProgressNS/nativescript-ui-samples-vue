@@ -3,6 +3,7 @@ import StylingAxes from './StylingAxes';
 import StylingGrid from './StylingGrid';
 import StylingLabels from './StylingLabels';
 import StylingPieSeries from './StylingPieSeries';
+import StylingBarSeries from './StylingBarSeries';
 import StylingSelection from './StylingSelection';
 import StylingSeries from './StylingSeries';
 import StylingTicks from './StylingTicks';
@@ -36,6 +37,7 @@ export default {
         StylingAxes,
         StylingSeries,
         StylingPieSeries,
+        StylingBarSeries,
         StylingGrid,
         StylingLabels,
         StylingTicks,

@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-spline-series-vue
 import { getCountriesData } from '../../data';
 
 const description = 'Spline Series';
@@ -12,12 +13,9 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <SplineSeries v-tkCartesianSeries
-                    categoryProperty="Country"
-                    valueProperty="Amount"
-                    :items="items" />
       <CategoricalAxis v-tkCartesianHorizontalAxis />
       <LinearAxis v-tkCartesianVerticalAxis />
+      <SplineSeries v-tkCartesianSeries :items="items" categoryProperty="Country" valueProperty="Amount" />
     </RadCartesianChart>
   </Page>
   `,
@@ -33,3 +31,4 @@ export default {
     },
   },
 };
+// << chart-spline-series-vue

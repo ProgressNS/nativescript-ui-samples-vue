@@ -1,5 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { LinearAxis, ChartAxisHorizontalLocation } from 'nativescript-ui-chart';
+// >> chart-pan-zoom-vue
+import { LinearAxis, ChartAxisHorizontalLocation, LogarithmicAxis } from 'nativescript-ui-chart';
 import { getCountriesData } from '../../data';
 
 const description = 'Pan & Zoom';
@@ -13,24 +14,13 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-      <BarSeries v-tkCartesianSeries
-                  seriesName="Bar"
-                  stackMode="Stack"
-                  categoryProperty="Country"
-                  valueProperty="SecondVal"
-                  :items="items"
-                  :verticalAxis="linearAxisZoomPan">
+
+      <BarSeries v-tkCartesianSeries :items="items" categoryProperty="Country" valueProperty="SecondVal" :verticalAxis="linearAxisZoomPan">
       </BarSeries>
 
-      <CategoricalAxis v-tkCartesianHorizontalAxis allowPan="true" allowZoom="true"></CategoricalAxis>
+      <CategoricalAxis v-tkCartesianHorizontalAxis allowPan="false" allowZoom="true"></CategoricalAxis>
 
-      <LineSeries v-tkCartesianSeries
-                  seriesName="Line"
-                  stackMode="Stack"
-                  categoryProperty="Country"
-                  valueProperty="Amount"
-                  :items="items"
-                  :verticalAxis="linearAxisZoom">
+      <LineSeries v-tkCartesianSeries :items="items" categoryProperty="Country" valueProperty="Amount" :verticalAxis="linearAxisZoom">
       </LineSeries>
 
     </RadCartesianChart>
@@ -45,7 +35,6 @@ export default {
     linearAxisZoomPan.horizontalLocation = ChartAxisHorizontalLocation.Right;
     linearAxisZoomPan.allowZoom = true;
     linearAxisZoomPan.allowPan = true;
-
     return {
       title: description,
       items: getCountriesData(),
@@ -59,3 +48,4 @@ export default {
     },
   },
 };
+// << chart-pan-zoom-vue

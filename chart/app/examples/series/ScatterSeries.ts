@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-scatter-vue
 import { getScatterData } from '../../data';
 
 const description = 'Scatter Series';
@@ -12,13 +13,12 @@ export default {
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
     <RadCartesianChart>
-
-      <ScatterSeries v-tkCartesianSeries :items="items" xProperty="Age" yProperty="Salary" bubbleSizeProperty="Impact"></ScatterSeries>
-      <ScatterSeries v-tkCartesianSeries :items="items" xProperty="Age" yProperty="Spendings" bubbleSizeProperty="Impact"></ScatterSeries>
-      <ScatterSeries v-tkCartesianSeries :items="items" xProperty="Age" yProperty="Savings" bubbleSizeProperty="Impact"></ScatterSeries>
-
       <LinearAxis v-tkCartesianHorizontalAxis></LinearAxis>
       <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
+
+      <ScatterSeries v-tkCartesianSeries :items="items" xProperty="Age" yProperty="Salary"></ScatterSeries>
+      <ScatterSeries v-tkCartesianSeries :items="items" xProperty="Age" yProperty="Spendings"></ScatterSeries>
+      <ScatterSeries v-tkCartesianSeries :items="items" xProperty="Age" yProperty="Savings"></ScatterSeries>
     </RadCartesianChart>
   </Page>
   `,
@@ -34,3 +34,4 @@ export default {
     },
   },
 };
+// << chart-scatter-vue

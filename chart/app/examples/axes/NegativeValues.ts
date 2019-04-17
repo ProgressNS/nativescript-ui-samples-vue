@@ -1,7 +1,8 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-negative-values-vue
 import { getNegativeValues } from '../../data';
 
-const description = 'Negative values';
+const description = 'Negative Values';
 
 export default {
   name: 'NegativeValues',
@@ -15,11 +16,7 @@ export default {
       <LinearAxis v-tkCartesianVerticalAxis allowZoom="true" minimum="-50" maximum="50"></LinearAxis>
       <CategoricalAxis v-tkCartesianHorizontalAxis allowZoom="true"></CategoricalAxis>
 
-      <SplineAreaSeries v-tkCartesianSeries
-                        seriesName="SplineArea"
-                        categoryProperty="Period"
-                        valueProperty="Amount"
-                        :items="items"></SplineAreaSeries>
+      <SplineAreaSeries v-tkCartesianSeries :items="items" categoryProperty="Period" valueProperty="Amount"></SplineAreaSeries>
     </RadCartesianChart>
   </Page>
   `,
@@ -35,3 +32,4 @@ export default {
     },
   },
 };
+// << chart-negative-values-vue

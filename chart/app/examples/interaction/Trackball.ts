@@ -1,4 +1,5 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
+// >> chart-trackball-vue
 import { getCandleStickData } from '../../data';
 
 const description = 'Trackball';
@@ -18,12 +19,8 @@ export default {
         <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
         <Trackball v-tkCartesianTrackball></Trackball>
         <CandlestickSeries v-tkCartesianSeries
-                           categoryProperty="Date"
-                           openPropertyName="Open"
-                           highPropertyName="High"
-                           lowPropertyName="Low"
-                           closePropertyName="Close"
-                           :items="items">
+          categoryProperty="Date" :items="items"
+          openPropertyName="Open" highPropertyName="High" lowPropertyName="Low" closePropertyName="Close">
         </CandlestickSeries>
       </RadCartesianChart>
     </GridLayout>
@@ -41,3 +38,4 @@ export default {
     },
   },
 };
+// << chart-trackball-vue

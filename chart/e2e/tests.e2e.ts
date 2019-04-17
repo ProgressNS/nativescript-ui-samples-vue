@@ -203,7 +203,7 @@ describe("Chart1", () => {
         });
         it("should open Styling Pie charts series", async () => {
             await navigateToView(driver, stylingText);
-            const pieChartSeriesButton = await driver.findElementByText("Styling Pie Charts Series");
+            const pieChartSeriesButton = await driver.findElementByText("Styling Pie Series");
             await pieChartSeriesButton.click();
             await driver.wait(animationTime);
             const isTrue = await driver.compareScreen("styling-pie-series", 3, 50, ImageOptions.pixel);
