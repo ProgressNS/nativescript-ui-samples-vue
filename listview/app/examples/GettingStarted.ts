@@ -2,7 +2,7 @@ import { getItemList } from '../data';
 import * as frameModule from "tns-core-modules/ui/frame";
 
 const description = 'Getting Started';
-
+// >> listview-getting-started-vue
 export default {
   name: 'GettingStarted',
   description: description,
@@ -40,3 +40,4 @@ export default {
     }
   }
 };
+// << listview-getting-started-vue

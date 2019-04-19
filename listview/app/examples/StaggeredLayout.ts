@@ -1,7 +1,7 @@
 import * as frameModule from "tns-core-modules/ui/frame";
 
 const description = 'Staggered Layout';
-
+// >> listview-staggeredlayout-vue
 const words = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
 
 const getRandomString = () => {
@@ -63,3 +63,4 @@ export default {
     }
   }
 };
+// << listview-staggeredlayout-vue

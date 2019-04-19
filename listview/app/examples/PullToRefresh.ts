@@ -1,7 +1,7 @@
 import * as frameModule from "tns-core-modules/ui/frame";
 
 const description = 'Pull To Refresh';
-
+// >> listview-pulltorefresh-vue
 export default {
   name: 'PullToRefresh',
   description: description,
@@ -74,3 +74,4 @@ export default {
     }
   }
 };
+// << listview-pulltorefresh-vue

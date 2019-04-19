@@ -4,7 +4,7 @@ import * as frameModule from "tns-core-modules/ui/frame";
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 
 const description = 'Item Selection';
-
+// >> listview-itemselection-vue
 export default {
   name: 'ItemSelection',
   description: description,
@@ -60,3 +60,4 @@ export default {
     }
   }
 };
+// << listview-itemselection-vue

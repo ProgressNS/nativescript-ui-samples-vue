@@ -2,7 +2,7 @@ import { simpleItemList } from '../data';
 import * as frameModule from "tns-core-modules/ui/frame";
 
 const description = 'Grid Layout';
-
+// >> listvue-gridlayout-vue
 export default {
   name: 'GridLayoutList',
   description: description,
@@ -41,3 +41,4 @@ export default {
     }
   }
 };
+// << listvue-gridlayout-vue

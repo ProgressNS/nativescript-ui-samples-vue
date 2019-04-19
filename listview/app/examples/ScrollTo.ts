@@ -3,7 +3,7 @@ import * as frameModule from "tns-core-modules/ui/frame";
 import { ListViewItemSnapMode } from "nativescript-ui-listview";
 
 const description = 'Scroll To Item';
-
+// >> listview-scrolling-vue
 export default {
   name: 'ScrollTo',
   description: description,
@@ -63,3 +63,4 @@ export default {
     }
   }
 };
+// << listview-scrolling-vue
