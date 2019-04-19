@@ -2,7 +2,7 @@ import { getItemList } from '../data';
 import * as frameModule from 'tns-core-modules/ui/frame';
 
 const description = 'Swipe Actions';
-
+// >> listview-swipeactions-vue
 export default {
   name: 'SwipeActions',
   description: description,
@@ -72,3 +72,4 @@ export default {
     },
   }
 };
+// << listview-swipeactions-vue

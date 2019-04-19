@@ -2,7 +2,7 @@ import { simpleItemList } from '../data';
 import * as frameModule from "tns-core-modules/ui/frame";
 
 const description = 'Item Reorder';
-
+// >> listview-itemreorder-vue
 export default {
   name: 'ItemReorder',
   description: description,
@@ -41,3 +41,4 @@ export default {
     }
   }
 };
+// << listview-itemreorder-vue

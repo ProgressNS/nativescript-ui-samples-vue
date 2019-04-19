@@ -1,7 +1,7 @@
 import * as frameModule from "tns-core-modules/ui/frame";
 
 const description = 'Multiple Templates';
-
+// >> listview-multipletemplates-itemselector-vue
 export default {
   name: 'MultipleTemplates',
   description: 'Multiple Templates',
@@ -90,3 +90,4 @@ export default {
     },
   }
 };
+// << listview-multipletemplates-itemselector-vue
