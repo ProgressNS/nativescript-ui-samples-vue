@@ -1,7 +1,7 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 // >> calendar-transitionmodes-vue
 import { CalendarTransitionMode } from 'nativescript-ui-calendar';
-import { isAndroid } from 'platform';
+import { isAndroid } from 'tns-core-modules/platform';
 const description = 'Transition modes';
 
 export default {
