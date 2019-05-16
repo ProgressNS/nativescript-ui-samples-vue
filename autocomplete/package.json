@@ -6,20 +6,21 @@
   "nativescript": {
     "id": "org.nativescript.demovueautocomplete",
     "tns-android": {
-      "version": "5.3.0"
+      "version": "5.4.0"
     },
     "tns-ios": {
-      "version": "5.3.0"
+      "version": "5.4.0"
     }
   },
   "dependencies": {
     "nativescript-theme-core": "~1.0.4",
     "nativescript-ui-autocomplete": "*",
+    "nativescript-ui-core": "*",
     "nativescript-vue": "~2.2.0",
     "tns-core-modules": "^5.0.0",
+    "tns-platform-declarations": "^5.4.0",
     "tslib": "^1.9.3",
-    "vue": "^2.5.17",
-    "nativescript-ui-core": "*"
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@babel/core": "~7.1.0",
@@ -36,9 +37,9 @@
     "mocha-junit-reporter": "^1.18.0",
     "mocha-multi": "^1.0.1",
     "mochawesome": "^3.1.1",
-    "nativescript-dev-appium": "4.0.9",
+    "nativescript-dev-appium": "5.2.0",
     "nativescript-dev-typescript": "~0.9.0",
-    "nativescript-dev-webpack": "~0.21.0",
+    "nativescript-dev-webpack": "~0.22.0",
     "nativescript-vue-template-compiler": "~2.2.0",
     "shelljs": "^0.8.2",
     "tslint": "^5.11.0",
