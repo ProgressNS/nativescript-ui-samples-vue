@@ -42,7 +42,7 @@ export default {
     },
   },
   mounted () {
-    const jsonUrl = 'https://raw.githubusercontent.com/telerik/nativescript-ui-samples/master/examples-data/airports.json';
+    const jsonUrl = 'https://raw.githubusercontent.com/NativeScript/nativescript-ui-samples/master/examples-data/airports.json';
 
     this.$refs.autocomplete.setLoadSuggestionsAsync((text) => {
       const promise = new Promise((resolve, reject) => {

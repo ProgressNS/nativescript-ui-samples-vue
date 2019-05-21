@@ -136,7 +136,7 @@ export const getMovies = () => {
 // << dataform-data-converter-vue
 export class Booking {
   // Next line would raise an error because a core issue
-  // See https://github.com/telerik/nativescript-ui-feedback/issues/921
+  // See https://github.com/NativeScript/nativescript-ui-feedback/issues/921
   // public from: Array<String> = new Array('Belfast City, BHD', 'City of Derry, LDY');
   public from: string = '';
   public to: string = '';
