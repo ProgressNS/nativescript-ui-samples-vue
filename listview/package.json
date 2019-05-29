@@ -14,11 +14,9 @@
   },
   "dependencies": {
     "nativescript-theme-core": "~1.0.4",
-    "nativescript-ui-core": "*",
     "nativescript-ui-listview": "*",
     "nativescript-vue": "~2.2.0",
     "tns-core-modules": "^5.0.0",
-    "tns-platform-declarations": "^5.4.0",
     "tslib": "^1.9.3",
     "vue": "^2.5.17"
   },
@@ -41,7 +39,8 @@
     "nativescript-dev-webpack": "~0.22.0",
     "nativescript-vue-template-compiler": "~2.2.0",
     "shelljs": "^0.8.2",
-    "vue-loader": "^15.4.2",
-    "tslint": "~5.11.0"
+    "tns-platform-declarations": "^5.4.1",
+    "tslint": "~5.11.0",
+    "vue-loader": "^15.4.2"
   }
 }
