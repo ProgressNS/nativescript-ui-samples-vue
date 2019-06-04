@@ -62,7 +62,8 @@ export default {
         <Button text="Remove last item" @tap="deleteItem" col="1" />
       </GridLayout>
       <GridLayout columns="*, *" rows="auto">
-        <RadListView for="r in currentList" col="0">
+        <RadListView for="r in currentList" col="0"
+                     @itemTap="onItemTap">
           <v-template>
             <RadListItem :item="r"
                          @create-item="markCreation(r)"
@@ -161,6 +162,9 @@ export default {
       this.currentList = getList();
       this.createsCounter = [0, 0, 0];
       this.biggestDeletedItem = 0;
+    },
+    onItemTap ({ item }) {
+      console.log(`Item tapped: ${item}`);
     },
   },
   created () {
