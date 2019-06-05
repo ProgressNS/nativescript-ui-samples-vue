@@ -18,6 +18,8 @@ export default {
                    for="item in itemList"
                    selectionBehavior="Press"
                    @itemSelected="onItemSelected"
+                   @itemSelecting="onItemSelecting"
+                   @itemDeselecting="onItemDeselecting"
                    @itemDeselected="onItemDeselected">
         <v-template>
           <StackLayout class="item p-10" orientation="vertical">
@@ -50,6 +52,14 @@ export default {
     onItemSelected({ index, object }) {
       const itemSelected = this.itemList.getItem(index);
       console.log(`Item selected: ${itemSelected.name}`);
+    },
+    onItemSelecting({ index, object }) {
+      const itemSelected = this.itemList.getItem(index);
+      console.log(`Item selecting: ${itemSelected.name}`);
+    },
+    onItemDeselecting({ index, object }) {
+      const itemSelected = this.itemList.getItem(index);
+      console.log(`Item deselecting: ${itemSelected.name}`);
     },
     onItemDeselected({ index, object }) {
       let itemSelected = this.itemList.getItem(index);
