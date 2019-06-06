@@ -9,6 +9,7 @@ import Hint from './Hint/Hint';
 import TokenLayouts from './Token-Layouts/Token-Layouts';
 import PreselectedTokens from './Preselected-tokens/Preselected-tokens';
 import ReadOnly from './ReadOnly/ReadOnly';
+import CustomToken from './CustomToken/CustomToken';
 
 export const getExamples = () => {
   return [
@@ -23,5 +24,6 @@ export const getExamples = () => {
     ReadOnly,
     Hint,
     PreselectedTokens,
+    CustomToken,
   ];
 };
