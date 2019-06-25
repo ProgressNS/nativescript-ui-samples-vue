@@ -16,6 +16,7 @@ import Group from './Group';
 import GroupScrollTo from './GroupScrollTo';
 import GroupWithHeaderFooter from './GroupWithHeaderFooter';
 import TemplateGroup from './TemplateGroup';
+import FirstVisibleIndex from './FirstVisibleIndex';
 
 export const getExamples = () => {
   return [
@@ -37,5 +38,6 @@ export const getExamples = () => {
     ScrollTo,
     SwipeActions,
     Observable,
+    FirstVisibleIndex
   ];
 };
