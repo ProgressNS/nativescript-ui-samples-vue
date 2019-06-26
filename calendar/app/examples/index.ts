@@ -8,6 +8,8 @@ import ProgrammaticControl from './ProgrammaticControl';
 import SelectionModes from './SelectionModes';
 import TransitionModes from './TransitionModes';
 import ViewModes from './ViewModes';
+import ProgrammaticSelection from './ProgrammaticSelection';
+import CustomEvents from './CustomEvents';
 
 export const getExamples = () => {
   return [
@@ -20,6 +22,8 @@ export const getExamples = () => {
     TransitionModes,
     CellStyling,
     EventsViewModes,
-    DayView
+    DayView,
+    ProgrammaticSelection,
+    CustomEvents
   ];
 };

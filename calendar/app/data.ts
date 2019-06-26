@@ -77,3 +77,39 @@ export function getCalendarDayEvents(): Array<CalendarEvent> {
   return events;
 }
 // << calendar-populate-data-vue
+
+// >> calendar-populate-custom-event-vue
+export function getCalendarCustomEvents(): Array<CustomEvent> {
+  const eventColors: Array<Color> = [new Color("#71CBED"), new Color("#689F38"), new Color("#7B1FA2")];
+  const events: Array<CustomEvent> = new Array<CustomEvent>();
+  const now: Date = new Date();
+  let startDate: Date;
+  let endDate: Date;
+  let event: CustomEvent;
+  for (let i = 1; i < 10; i++) {
+    startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i % 2, 12 + i);
+    endDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i % 2, 12 + i, 30);
+    let eventLocation = i > 5 ? "at home" : "at the office";
+    event = new CustomEvent(i, "event " + i, eventLocation, startDate, endDate, false, eventColors[i % 3]);
+    events.push(event);
+  }
+  return events;
+}
+// << calendar-populate-custom-event-vue
+
+// >> calendar-custom-event-model-vue
+export class CustomEvent extends CalendarEvent {
+  id: number;
+  location: string;
+  formattedTime: string;
+
+  constructor(id: number, title: string, location: string, startDate: Date, endDate: Date, isAllDay?: boolean, eventColor?: Color) {
+      super(title, startDate, endDate, isAllDay, eventColor);
+      this.id = id;
+      this.location = location;
+      const hours = startDate.getHours();
+      const minutes = startDate.getMinutes();
+      this.formattedTime = (hours < 10 ? "0" : "") + hours + ':' + (minutes < 10 ? "0" : "") + minutes;
+  }
+}
+// << calendar-custom-event-model-vue

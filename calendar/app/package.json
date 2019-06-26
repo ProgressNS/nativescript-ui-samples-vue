@@ -6,7 +6,7 @@
     "v8Flags": "--expose_gc",
     "markingMode": "none",
     "requireModules": [
-      "nativescript-ui-listview"
+      "nativescript-ui-calendar"
     ]
   }
 }
