@@ -34,19 +34,31 @@ export default {
     return {
       title: description,
       isEnabled: true,
-      itemList: [
-        { name: 'Item 1', group: 'Ready' },
-        { name: 'Item 2', group: 'Completed' },
-        { name: 'Item 3', group: 'Completed' },
-        { name: 'Item 4', group: 'Ready' },
-        { name: 'Item 5', group: 'Completed' },
-        { name: 'Item 6', group: 'Completed' },
-      ],
+      itemList: this.getItemList(),
     };
   },
   methods: {
     onNavigationButtonTap() {
       frameModule.topmost().goBack();
+    },
+    getItemList() {
+      const GENERATED_ITEMS_COUNT = 100;
+      const GROUPS_COUNT = 3;
+      const SPECIAL_ITEM_INTERVAL = 4;
+      const generateItems = () => {
+        const items = [];
+
+        for (let i = 1; i <= GENERATED_ITEMS_COUNT; i++) {
+          items.push({
+            name: i % SPECIAL_ITEM_INTERVAL === 0 ? `Special Item ${i}` : `Item ${i}`,
+            group: `Category ${i % GROUPS_COUNT}`
+          });
+        }
+
+        return items;
+      };
+
+      return generateItems();
     },
     getItemGroup(item) {
       return item.group;
