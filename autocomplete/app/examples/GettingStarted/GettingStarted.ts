@@ -21,15 +21,6 @@ export default {
                                :suggestMode="suggestMode"
                                :displayMode="displayMode"
                                :items="dataItems">
-        <SuggestionView ~suggestionView suggestionViewHeight="300">
-          <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
-            <v-template>
-              <StackLayout orientation="vertical">
-                <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
-              </StackLayout>
-            </v-template>
-          </StackLayout>
-        </SuggestionView>
       </RadAutoCompleteTextView>
       <Label text="SUGGEST MODES" marginTop="5"></Label>
       <StackLayout orientation="horizontal">

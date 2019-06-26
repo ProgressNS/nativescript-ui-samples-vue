@@ -6,6 +6,7 @@ import DisplayModes from '~/examples/Display-modes/Display-modes';
 
 const description = 'Plain';
 
+// >> autocomplete-suggestionview-vue
 export default {
   name: 'Plain',
   description: description,
@@ -51,3 +52,4 @@ export default {
     }
   }
 };
+// << autocomplete-suggestionview-vue
