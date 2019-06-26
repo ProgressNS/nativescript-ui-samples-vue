@@ -5,6 +5,7 @@ import { getCountriesCount, getCountry } from '../data';
 
 const description = 'Switch at runtime';
 
+// >> autocomplete-layouts-wrap-vue
 export default {
   name: 'Switch at runtime',
   description: description,
@@ -83,3 +84,4 @@ export default {
     this.lastIndex = 0;
   },
 };
+// << autocomplete-layouts-wrap-vue

@@ -1,6 +1,6 @@
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
-import { AutoCompleteDisplayMode, AutoCompleteEventData } from 'nativescript-ui-autocomplete';
+import { AutoCompleteEventData } from 'nativescript-ui-autocomplete';
 import { CityModel } from './city';
 import { default as data } from "./cities";
 
@@ -9,6 +9,7 @@ const description = 'Custom Token Model ';
 export default {
   name: 'Custom Token Model',
   description: description,
+  // >> autocomplete-custom-tokens-template-vue
   template: `
   <Page>
     <ActionBar :title="title">
@@ -36,7 +37,9 @@ export default {
     </StackLayout>
   </Page>
   `,
+  // << autocomplete-custom-tokens-template-vue
   data () {
+    // >> autocomplete-custom-tokens-items-ts-vue
     let dataItems = new ObservableArray<CityModel>();
 
     for (let i = 0; i < data.items.length; i++) {
@@ -44,6 +47,7 @@ export default {
         const ds = "res://" + d;
         dataItems.push(new CityModel(data.items[i].id, data.items[i].city, data.items[i].country, ds));
     }
+    // << autocomplete-custom-tokens-items-ts-vue
 
     return {
       title: description,

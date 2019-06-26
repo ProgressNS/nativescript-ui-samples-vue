@@ -1,5 +1,6 @@
 import { TokenModel } from 'nativescript-ui-autocomplete';
 
+// >> autocomplete-custom-token-model-ts-vue
 export class CityModel extends TokenModel {
     public id: number;
     public city: string;
@@ -16,3 +17,4 @@ export class CityModel extends TokenModel {
         return this.id + ": " + this.city + ", " + this.country;
     }
 }
+// << autocomplete-custom-token-model-ts-vue
