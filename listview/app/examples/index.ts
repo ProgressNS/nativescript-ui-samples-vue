@@ -1,6 +1,7 @@
 import GettingStarted from './GettingStarted';
 import GettingStartedHo from './GettingStartedHo';
 import GridLayout from './GridLayout';
+import GridLayoutNoHeight from './GridLayoutNoHeight';
 import ItemAnimations from './ItemAnimations';
 import ItemLoading from './ItemLoading';
 import ItemReorder from './ItemReorder';
@@ -23,6 +24,7 @@ export const getExamples = () => {
     GettingStarted,
     GettingStartedHo,
     GridLayout,
+    GridLayoutNoHeight,
     StaggeredLayout,
     ItemAnimations,
     PullToRefresh,

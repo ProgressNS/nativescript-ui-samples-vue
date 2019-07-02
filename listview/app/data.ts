@@ -11,3 +11,4 @@ export const getItemList = (count: Number) => {
 };
 
 export const simpleItemList = getItemList(20);
+export const simpleItemList100 = getItemList(100);
