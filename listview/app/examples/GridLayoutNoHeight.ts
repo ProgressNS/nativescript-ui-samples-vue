@@ -1,35 +1,33 @@
-import { simpleItemList } from '../data';
+import { simpleItemList100 } from '../data';
 import * as frameModule from "tns-core-modules/ui/frame";
 
-const description = 'Grid with item height';
-// >> listvue-gridlayout-vue
+const description = 'Grid without item height';
 export default {
-  name: 'GridLayoutList',
+  name: 'GridLayoutWithFixedHeight',
   description: description,
   template: `
   <Page>
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
+    <GridLayout>
       <RadListView for="item in itemList"
                    layout="grid"
-                   itemHeight="100"
                    @itemTap="onItemTap">
         <v-template>
-          <StackLayout class="grid-item" orientation="vertical">
-            <Label :text="item.name" class="nameLabel"></Label>
-            <Label :text="item.description" class="descriptionLabel"></Label>
-          </StackLayout>
+          <GridLayout rows="auto, auto" :backgroundColor="item.id % 2 != 0 ? 'lightgreen' : 'lightblue'">
+            <Label row="0" :text="item.name"></Label>
+            <Label row="1" :text="item.description"></Label>
+          <GridLayout>
         </v-template>
       </RadListView>
-    </StackLayout>
+    </GridLayout>
   </Page>
   `,
   data () {
     return {
       title: description,
-      itemList: simpleItemList,
+      itemList: simpleItemList100,
     };
   },
   methods: {
@@ -41,4 +39,3 @@ export default {
     }
   }
 };
-// << listvue-gridlayout-vue
