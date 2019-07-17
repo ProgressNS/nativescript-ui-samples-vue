@@ -33,8 +33,7 @@ export default {
         :weekViewStyle='weekViewStyle'
         :monthNamesViewStyle='monthNamesViewStyle'
         :yearViewStyle='yearViewStyle'
-        :dayViewStyle='dayViewStyle'
-        :viewMode='viewMode'>
+        :dayViewStyle='dayViewStyle'>
       </RadCalendar>
     </StackLayout>
   </Page>
