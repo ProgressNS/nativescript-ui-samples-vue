@@ -36,6 +36,7 @@ export default {
     return {
       title: description,
       person: new RegisteringUser(),
+      text: null,
       personMetadata: {
         'isReadOnly': false,
         'commitMode': 'Immediate',
@@ -160,12 +161,10 @@ export default {
         this.$refs.dataform.notifyValidated('password2', true);
       }
 
-      this._text = null;
-
       if (!isValid) {
-        this._text = 'Username or Password is not valid.';
+        this.text = 'Username or Password is not valid.';
       } else {
-        this._text = '';
+        this.text = '';
         this.$refs.dataform.commitAll();
 
         alert({
