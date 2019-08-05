@@ -15,7 +15,7 @@ export default {
     <RadCartesianChart>
       <DateTimeContinuousAxis v-tkCartesianHorizontalAxis
         minimum="01/02/2015" maximum="01/10/2015"
-        majorStep="Month" dateFormat="MMM-dd"
+        majorStep="1" majorStepUnit="Month" dateFormat="MMM-dd"
         labelFitMode="Rotate" labelRotationAngle="1.2">
       </DateTimeContinuousAxis>
       <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
