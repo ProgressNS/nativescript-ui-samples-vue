@@ -48,3 +48,7 @@ button {
   margin: 16;
   vertical-align: center;
 }
+
+.root-drawer-content {
+  background-color: lightgray;
+}
