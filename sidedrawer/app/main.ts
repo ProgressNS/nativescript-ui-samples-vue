@@ -20,7 +20,7 @@ new Vue({
   template: `
   <RadSideDrawer ref="drawer">
       <StackLayout ~drawerContent>
-      <GridLayout rows="auto, *" class="root-drawer-content">
+      <GridLayout rows="auto, *, auto" class="root-drawer-content">
         <StackLayout row="0">
           <Label text="SideDrawerRoot" class="h1 text-center"></Label>
         </StackLayout>
@@ -33,6 +33,7 @@ new Vue({
             </GridLayout>
           </v-template>
         </ListView>
+        <Button row="2" text="Close Drawer" @tap="onCloseDrawerTap()"></Button>
       </GridLayout>
       </StackLayout>
       <StackLayout ~mainContent>
