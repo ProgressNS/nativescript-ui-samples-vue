@@ -144,3 +144,11 @@ export class Booking {
   constructor() {
   }
 }
+
+export class CitiesList {
+  public city1: string = "Seville";
+  public city2: string = "Seville";
+  public city3: number = 1;
+  public city4: number = 1;
+  public city5: number = 1;
+}
