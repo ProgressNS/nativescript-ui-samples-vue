@@ -134,6 +134,7 @@ export const getMovies = () => {
   return movies;
 };
 // << dataform-data-converter-vue
+
 export class Booking {
   // Next line would raise an error because a core issue
   // See https://github.com/telerik/nativescript-ui-feedback/issues/921

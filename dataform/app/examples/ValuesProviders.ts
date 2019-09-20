@@ -1,6 +1,6 @@
 import { CitiesList } from '../data';
 
-const description = 'Values Provider';
+const description = 'Values Providers';
 
 export default {
   name: 'ValuesProvider',
