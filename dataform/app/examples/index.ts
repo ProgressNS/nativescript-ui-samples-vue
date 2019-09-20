@@ -10,6 +10,7 @@ import Validation from './Validation';
 import ValidationEvents from './ValidationEvents';
 import ValidationMarkup from './ValidationMarkup';
 import ValidationModes from './ValidationModes';
+import ValuesProviders from './ValuesProviders';
 
 export const getExamples = () => {
   return [
@@ -25,5 +26,6 @@ export const getExamples = () => {
     ValidationMarkup,
     Groups,
     Layouts,
+    ValuesProviders,
   ];
 };
