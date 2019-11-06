@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 // >> autocomplete-events-vue
 import { RadAutoCompleteTextView } from 'nativescript-ui-autocomplete';
@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onTokenAdded({ token }) {
       this.logEvent(`Added Token: ${token.text}`);

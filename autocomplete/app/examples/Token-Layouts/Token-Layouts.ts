@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import SwitchAtRuntime from './Switch-at-runtime';
 import Horizontal from './Horizontal';
 import Wrap from './Wrap';
@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     goToExample ({ item }) {
       this.$navigateTo(item);
