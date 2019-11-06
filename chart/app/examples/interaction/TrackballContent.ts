@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { TrackballCustomContentData } from 'nativescript-ui-chart';
 import { getTemperatures, TemperatureData } from '../../data';
 
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onTrackBallContentRequested(args: TrackballCustomContentData) {
       let selectedItem: TemperatureData = args.pointData;
