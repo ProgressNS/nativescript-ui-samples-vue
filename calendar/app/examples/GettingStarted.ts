@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 
 const description = 'Getting Started';
 // >> calendar-gettingstarted-vue
@@ -15,7 +15,7 @@ export default {
   `,
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
   },
   data () {

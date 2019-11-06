@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { RadCalendar, CalendarEvent, CalendarCellTapEventData } from "nativescript-ui-calendar";
 import { getCalendarCustomEvents } from '../data';
 
@@ -40,7 +40,7 @@ export default {
   `,
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onCellTap(args: CalendarCellTapEventData) {
         const calendar: RadCalendar = args.object;

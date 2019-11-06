@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 
 const description = 'Localization';
 // >> calendar-localization-vue
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     changeLocale(locale: String) {
       this.locale = locale;

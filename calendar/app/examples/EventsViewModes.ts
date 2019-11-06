@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> calendar-events-view-modes-vue
 import { CalendarEventsViewMode } from 'nativescript-ui-calendar';
 import { getEvents } from '../data';
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onNoneTap() {
       this.eventsViewMode = CalendarEventsViewMode.None;
