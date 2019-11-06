@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> chart-stacked-bar-series-vue
 import { getCountriesData } from '../../data';
 import { ChartSeriesStackMode } from "nativescript-ui-chart";
@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onStack100ModeSelected () {
       this.stackMode = ChartSeriesStackMode.Stack100;

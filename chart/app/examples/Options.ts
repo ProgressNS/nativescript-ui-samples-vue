@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { ItemEventData } from "tns-core-modules/ui/list-view";
 import { NavigatedData } from "tns-core-modules/ui/page";
 
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onNavigatingTo(args: NavigatedData) {
       this.context = args.context.optionsInfo;
@@ -41,7 +41,7 @@ export default {
     },
     onItemTap(args: ItemEventData) {
       this.context.index = args.index;
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   },
 };

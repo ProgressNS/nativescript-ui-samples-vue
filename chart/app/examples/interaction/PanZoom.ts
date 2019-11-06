@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> chart-pan-zoom-vue
 import { LinearAxis, ChartAxisHorizontalLocation, LogarithmicAxis } from 'nativescript-ui-chart';
 import { getCountriesData } from '../../data';
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
   },
 };

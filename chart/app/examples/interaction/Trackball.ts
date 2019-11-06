@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> chart-trackball-vue
 import { getCandleStickData } from '../../data';
 
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
   },
 };

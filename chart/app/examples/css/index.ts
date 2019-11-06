@@ -1,15 +1,15 @@
 import { Frame } from 'tns-core-modules/ui/frame';
-import DatapointSelection from './DatapointSelection';
-import PanZoom from './PanZoom';
-import PieSelection from './PieSelection';
-import SeriesSelection from './SeriesSelection';
-import TrackballContent from './TrackballContent';
-import TrackballExample from './Trackball';
+import AreaCss from './AreaCss';
+import BarCss from './BarCss';
+import CandlestickScc from './CandlestickCss';
+import DonutCss from './DonutCss';
+import LineCss from './LineCss';
+import ScatterCss from './ScatterCss';
 
-const description = 'Interaction';
+const description = 'CSS';
 
 export default {
-  name: 'Interaction',
+  name: 'CSS',
   description: description,
   template: `
   <Page>
@@ -35,12 +35,12 @@ export default {
     return {
       title: description,
       examples: [
-        PanZoom,
-        TrackballExample,
-        TrackballContent,
-        PieSelection,
-        SeriesSelection,
-        DatapointSelection,
+        BarCss,
+        LineCss,
+        AreaCss,
+        ScatterCss,
+        CandlestickScc,
+        DonutCss,
       ],
     };
   },

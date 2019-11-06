@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { getFirstSeries, getSecondSeries, getThirdSeries } from '../../data';
 import { ChartSeriesStackMode } from "nativescript-ui-chart";
 import Options from '../Options';
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onStack100ModeSelected () {
       this.stackMode = ChartSeriesStackMode.Stack100;
