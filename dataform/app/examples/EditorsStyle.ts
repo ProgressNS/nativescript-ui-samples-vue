@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { PersonBase } from '../data';
 import { DataFormFontStyle } from "nativescript-ui-dataform";
 import { Color } from 'tns-core-modules/color';
@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onChangeStyles() {
       this._nameEditor.propertyEditorStyle.labelFontStyle = DataFormFontStyle.BoldItalic;

@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { TicketOrder, getMovies, Movie, MovieConverter } from '../data';
 
 const description = 'Editors using markup';
@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
   }
 };
