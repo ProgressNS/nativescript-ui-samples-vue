@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> gauge-animations-vue
 const description = 'Animations';
 
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onValueChange(value: number) {
       this.$refs.needle.nativeView.value = value;
