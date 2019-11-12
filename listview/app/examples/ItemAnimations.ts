@@ -1,5 +1,5 @@
 import { getItemList } from "../data";
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 import { ObservableArray } from "tns-core-modules/data/observable-array/observable-array";
 import { ListViewEventData, ListViewItemAnimation } from "nativescript-ui-listview";
 import * as dialogs from "tns-core-modules/ui/dialogs";
@@ -113,7 +113,7 @@ export default {
         });
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   }
 };

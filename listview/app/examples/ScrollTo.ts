@@ -1,5 +1,5 @@
 import { getItemList } from '../data';
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 import { ListViewItemSnapMode } from "nativescript-ui-listview";
 
 const description = 'Scroll To Item';
@@ -59,7 +59,7 @@ export default {
       this.scrollOffset = scrollOffset;
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   }
 };

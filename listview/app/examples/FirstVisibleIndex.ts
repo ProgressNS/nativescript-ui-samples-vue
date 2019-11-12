@@ -1,5 +1,5 @@
 import { getItemList } from '../data';
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 import { RadListView } from 'nativescript-ui-listview';
 
 const description = 'Get first visible index';
@@ -41,7 +41,7 @@ export default {
       console.log("First visible index:", this.firstVisibleIndex);
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   }
 };

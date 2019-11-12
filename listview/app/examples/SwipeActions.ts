@@ -1,5 +1,5 @@
 import { getItemList } from '../data';
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame }from 'tns-core-modules/ui/frame';
 
 const description = 'Swipe Actions';
 // >> listview-swipeactions-vue
@@ -68,7 +68,7 @@ export default {
       this.$refs.listView.notifySwipeToExecuteFinished();
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
   }
 };

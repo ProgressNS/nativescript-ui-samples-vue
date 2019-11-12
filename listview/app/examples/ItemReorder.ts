@@ -1,5 +1,5 @@
 import { simpleItemList } from '../data';
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 
 const description = 'Item Reorder';
 // >> listview-itemreorder-vue
@@ -37,7 +37,7 @@ export default {
       console.log(`Item reordered from index ${index} to ${data.targetIndex}`);
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   }
 };

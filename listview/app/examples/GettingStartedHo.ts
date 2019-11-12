@@ -1,5 +1,5 @@
 import { simpleItemList } from '../data';
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 
 const description = 'Getting Started Horizontal';
 
@@ -36,7 +36,7 @@ export default {
       console.log(`Tapped on ${item.name}`);
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   }
 };

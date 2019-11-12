@@ -1,5 +1,5 @@
 import { getItemList } from '../data';
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 
@@ -13,8 +13,9 @@ export default {
     <ActionBar :title="title">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
     </ActionBar>
-    <StackLayout>
+    <StackLayout backgroundColor="green">
       <RadListView ref="listView"
+                   class="red-transparent-selection-list"
                    for="item in itemList"
                    selectionBehavior="Press"
                    @itemSelected="onItemSelected"
@@ -22,13 +23,7 @@ export default {
                    @itemDeselecting="onItemDeselecting"
                    @itemDeselected="onItemDeselected">
         <v-template>
-          <StackLayout class="item p-10" orientation="vertical">
-            <Label :text="item.name" class="nameLabel m-t-10"></Label>
-            <Label :text="item.description" class="descriptionLabel"></Label>
-          </StackLayout>
-        </v-template>
-        <v-template if="$selected">
-          <StackLayout class="item p-10 selected" orientation="vertical">
+          <StackLayout orientation="vertical">
             <Label :text="item.name" class="nameLabel m-t-10"></Label>
             <Label :text="item.description" class="descriptionLabel"></Label>
           </StackLayout>
@@ -66,7 +61,7 @@ export default {
       console.log(`Item deselected ${itemSelected.name}`);
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   }
 };
