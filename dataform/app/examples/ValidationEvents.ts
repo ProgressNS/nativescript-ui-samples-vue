@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> dataform-vevent-vue
 import { BaseUser } from '../data';
 
@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onPropertyValidate(args) {
       let validationResult = true;
