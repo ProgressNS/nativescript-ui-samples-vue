@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 import { AutoCompleteEventData } from 'nativescript-ui-autocomplete';
 import { CityModel } from './city';
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onTokenAdded(args: AutoCompleteEventData) {
         console.log("Added Token: " + args.token);

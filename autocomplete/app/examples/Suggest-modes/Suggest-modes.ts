@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 
 import Append from './Append';
 import Suggest from './Suggest';
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     goToExample ({ item }) {
       this.$navigateTo(item);

@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 import { AutoCompleteLayoutMode, TokenModel } from 'nativescript-ui-autocomplete';
 import { getCountriesCount, getCountry } from '../data';
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onAddToken() {
       if (this.dataItems.length <= this.lastIndex) {
