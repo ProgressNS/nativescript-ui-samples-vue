@@ -4,7 +4,6 @@
   text-align: left;
   vertical-align: center;
   font-size: 16;
-  color:#404040;
 }
 
 button {
@@ -12,12 +11,12 @@ button {
   horizontal-align: center;
 }
 
-.drawerContentText {
+RadSideDrawer .drawerContentText {
   font-size: 13;
   padding: 10;
 }
 
-.drawerContentButton {
+RadSideDrawer .drawerContentButton {
   margin: 10;
   horizontal-align: left;
 }
@@ -51,4 +50,8 @@ button {
 
 .root-drawer-content {
   background-color: lightgray;
+}
+
+.mainStackLayout {
+  background-color: white;
 }

@@ -1,6 +1,6 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> sidedrawer-events-vue
-import { DrawerTransitionBase } from 'nativescript-ui-sidedrawer';
+import { PushTransition } from 'nativescript-ui-sidedrawer';
 
 const description = 'Events';
 
@@ -18,7 +18,7 @@ export default {
                    @drawerClosing="onDrawerClosing()"
                    @drawerClosed="onDrawerClosed()"
                    @drawerPan="onDrawerPan()"
-                   :transition="sideDrawerTransition">
+                   :drawerTransition="transition">
       <StackLayout ~drawerContent class="sideStackLayout">
         <StackLayout class="sideTitleStackLayout">
           <Label text="Navigation Menu"></Label>
@@ -47,12 +47,12 @@ export default {
     return {
       title: description,
       currentNotification: '',
-      sideDrawerTransition: DrawerTransitionBase,
+      transition: new PushTransition(),
     };
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     openDrawer() {
       this.$refs.drawer.showDrawer();
