@@ -1,4 +1,4 @@
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 
 const description = 'Staggered Layout';
 // >> listview-staggeredlayout-vue
@@ -59,7 +59,7 @@ export default {
       console.log(`Tapped on ${item.name}`);
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   }
 };

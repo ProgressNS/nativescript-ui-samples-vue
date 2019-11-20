@@ -1,4 +1,4 @@
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 
 const description = 'Group with header/footer';
 
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     getItemList() {
       const GENERATED_ITEMS_COUNT = 100;

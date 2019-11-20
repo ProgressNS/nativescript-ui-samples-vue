@@ -71,3 +71,9 @@
 .iosButton {
     margin: 10
 }
+
+.red-transparent-selection-list {
+  item-selected-background-color: red;
+  background-color: transparent;
+  color: white;
+}

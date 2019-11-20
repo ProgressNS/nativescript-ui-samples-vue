@@ -1,4 +1,4 @@
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 
 const description = 'Multiple Templates';
 // >> listview-multipletemplates-itemselector-vue
@@ -79,7 +79,7 @@ export default {
 
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     templateSelector(item, index, items) {
       return {

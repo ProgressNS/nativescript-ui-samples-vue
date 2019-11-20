@@ -1,6 +1,6 @@
 import { simpleItemList } from '../data';
 import { Color } from 'tns-core-modules/color';
-import * as frameModule from "tns-core-modules/ui/frame";
+import { Frame }  from "tns-core-modules/ui/frame";
 
 const description = 'Item Loading';
 
@@ -44,7 +44,7 @@ export default {
       }
     },
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     }
   }
 };
