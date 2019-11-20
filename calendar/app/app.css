@@ -19,3 +19,7 @@
 Button{
   padding: 5;
 }
+
+.viewButton {
+  font-size: 12;
+}

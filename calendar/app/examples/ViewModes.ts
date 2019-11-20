@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> calendar-viewmodes-vue
 import { CalendarViewMode } from 'nativescript-ui-calendar';
 import { getEvents } from '../data';
@@ -19,11 +19,11 @@ export default {
         :viewMode="viewMode">
       </RadCalendar>
       <StackLayout row="1" orientation="horizontal">
-        <Button text="Week" @tap="onWeekTap"></Button>
-        <Button text="Month"  @tap="onMonthTap"></Button>
-        <Button text="Month names"  @tap="onMonthNamesTap"></Button>
-        <Button text="Year"  @tap="onYearTap"></Button>
-        <Button text="Day"  @tap="onDayTap"></Button>
+        <Button class="viewButton" width="18%" text="Week" @tap="onWeekTap"></Button>
+        <Button class="viewButton" width="18%" text="Month"  @tap="onMonthTap"></Button>
+        <Button class="viewButton" width="25%" text="Month names"  @tap="onMonthNamesTap"></Button>
+        <Button class="viewButton" width="18%" text="Year"  @tap="onYearTap"></Button>
+        <Button class="viewButton" width="18%" text="Day"  @tap="onDayTap"></Button>
       <StackLayout>
     </GridLayout>
   </Page>
@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onWeekTap() {
       this.viewMode = CalendarViewMode.Week;
