@@ -1,4 +1,4 @@
-import * as frameModule from 'tns-core-modules/ui/frame';
+import { Frame } from 'tns-core-modules/ui/frame';
 // >> gauge-style-vue
 import {
   TitleStyle,
@@ -109,7 +109,7 @@ export default {
   },
   methods: {
     onNavigationButtonTap() {
-      frameModule.topmost().goBack();
+      Frame.topmost().goBack();
     },
     onLoaded() {
       let gauge = this.$refs.myGauge.nativeView as RadRadialGauge;
