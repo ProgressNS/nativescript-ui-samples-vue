@@ -30,6 +30,8 @@ export default {
           </StackLayout>
         </SuggestionView>
       </RadAutoCompleteTextView>
+      <Label text="For testing"></Label>
+      <TextView automationText="testing" hint="For testing"/>
     </StackLayout>
   </Page>
   `,
