@@ -1,18 +1,19 @@
 import { isIOS } from 'tns-core-modules/platform';
 import { RadListView } from 'nativescript-ui-listview';
 import { getItemList } from '../data';
+import { ObservableArray } from 'tns-core-modules/data/observable-array/observable-array';
 
 const description = 'Load On Demand';
 
-let allItems = getItemList(20);
-const chunkSize = 6;
+let allItems = getItemList(2000);
+const chunkSize = 20;
 
 const nextItems = () => {
   return allItems.splice(0, chunkSize);
 };
 
 const initItems = () => {
-  allItems = getItemList(20);
+  allItems = getItemList(2000);
   return allItems.splice(0, chunkSize);
 };
 
@@ -26,7 +27,7 @@ export default {
     </ActionBar>
     <StackLayout>
       <RadListView for="item in itemList"
-                   loadOnDemandMode="Manual"
+                   loadOnDemandMode="Auto"
                    @loadMoreDataRequested="onLoadMoreItemsRequested">
         <v-template>
           <StackLayout class="item p-10" orientation="vertical">
@@ -46,7 +47,7 @@ export default {
   data () {
     return {
       title: description,
-      itemList: initItems(),
+      itemList: new ObservableArray(initItems()),
       isIOS: isIOS,
     };
   },
@@ -57,15 +58,14 @@ export default {
       if (allItems.length > 0) {
           setTimeout(function () {
             console.log('Loading more items...');
-            nextItems().forEach(item => {
-              self.itemList.push(item);
-            });
-            listView.notifyLoadOnDemandFinished();
-          }, 1500);
+            const items = nextItems();
+            self.itemList.push(...items);
+            listView.notifyAppendItemsOnDemandFinished(items.length);
+          }, 0);
           args.returnValue = true;
       } else {
           args.returnValue = false;
-          listView.notifyLoadOnDemandFinished(true);
+          listView.notifyAppendItemsOnDemandFinished(0, true);
       }
     },
     onNavigationButtonTap() {
